@@ -25,6 +25,10 @@ body {
 button {
   border: 0;
   cursor: pointer;
+
+  &:visited, &:focus, &:active {
+    outline: none;
+  }
 }
 
 * {
@@ -45,4 +49,12 @@ h1, h2, h3, h4, h5, h6 {
 p {
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: $blue;
+
+  &:hover {
+    text-decoration: none;
+  }
 }

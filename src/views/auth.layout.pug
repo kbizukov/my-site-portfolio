@@ -9,8 +9,15 @@ html(lang="en")
     title Portfolio | welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-    
+      
     block content
+    
+    .background
+      +image("/mountains-bg.png", "Горы", "background__img")
+      video(class="background__video" src="/assets/images/night.mp4" autoplay muted loop)
+
+    include ./common/footer
 
     script(src="./bootloader.bundle.js")
     script(src="./auth.bundle.js")
+    block scripts

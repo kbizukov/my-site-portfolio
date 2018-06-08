@@ -1,0 +1,24 @@
+.welcome-wrapper {
+  display: flex;
+  height: 100vh;
+  z-index: 1;
+
+  .welcome {
+    z-index: 1;
+    height: 395px;
+    width: 380px;
+    margin: auto;
+    background: rgba(28, 31, 41, 0.5);
+    padding-top: 40px;
+    color: #fff;
+    text-align: center;
+
+    .welcome__my-name {
+      font-family: 'Roboto', Helvetica, sans-serif;
+      font-weight: 500;
+      margin-top: 11px;
+      margin-bottom: 3px;
+      font-size: 28px;
+    }
+  }
+}

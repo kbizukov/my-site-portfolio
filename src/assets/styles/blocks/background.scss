@@ -1,0 +1,38 @@
+// body {
+//   overflow: hidden;
+// }
+
+.background {
+  // background: #223b65;
+  background: transparent;
+  // width: 100vw;
+  // height: 100vh;
+
+  &__img {
+    width: 100vw;
+    position: fixed;
+    
+    bottom: 0;
+
+    @media screen and (min-width: 1800px) {
+      bottom: -160px;
+    }
+    
+    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+      bottom: -40px;
+    }
+  }
+
+  &__video {
+    object-fit: fill;
+    // width: 100vw;
+    // height: 100vh;
+    z-index: -1;
+    position: fixed;
+    left: 0;
+    top: 0;
+    filter:brightness(150%);
+    // min-width: 100%; 
+    // min-height: 100%;
+  }
+}
