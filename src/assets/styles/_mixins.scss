@@ -1,10 +1,8 @@
-@mixin inlined-svg ($svgName, $svgColor: $blue, $width: 30px, $height: 30px, $hoverColor: $light-blue){
-  background: svg-load($svgName, fill=$svgColor) center center no-repeat;
-  width: $width;
-  height: $height;
-  cursor: pointer;
-
-  &:hover {
-    background-image: svg-load($svgName, fill=$hoverColor);
-  }
+@mixin roboto-light {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 300;
+}
+@mixin roboto-medium {
+  font-family: 'Roboto', Helvetica, sans-serif;
+  font-weight: 500;
 }

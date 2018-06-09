@@ -1,0 +1,19 @@
+.skills-row__list {
+  margin-bottom: 26px;
+}
+
+.skills-row__item {
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+
+  &:not(:last-child) {
+    margin-right: 40px;
+  }
+}
+
+.skills-row__title {
+  @include roboto-medium;
+  font-size: 28px;
+  margin-bottom: 10px;
+}

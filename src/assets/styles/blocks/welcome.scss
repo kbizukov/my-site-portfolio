@@ -1,3 +1,17 @@
+.auth-block {
+  width: 180px;
+  position: absolute;
+  top: 24px;
+  height: 45px;
+  
+  @media screen and (min-width: 1800px) {
+    right: 100px;
+  }
+  @media screen and (min-width: 1200px) and (max-width: 1799px) {
+    right: 20px;
+  }
+}
+
 .welcome-wrapper {
   display: flex;
   height: 100vh;
@@ -13,12 +27,9 @@
     color: #fff;
     text-align: center;
 
-    .welcome__my-name {
-      font-family: 'Roboto', Helvetica, sans-serif;
-      font-weight: 500;
-      margin-top: 11px;
-      margin-bottom: 3px;
-      font-size: 28px;
+    &__socials {
+      margin-top: 32px;
+      margin-bottom: 34px;
     }
   }
 }

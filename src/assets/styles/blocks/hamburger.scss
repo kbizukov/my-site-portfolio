@@ -1,0 +1,16 @@
+.hamburger {
+  display: block;
+  width: 40px;
+  height: 35px;
+
+  &.inlined-svg {
+    background: svg-load('hamburger.svg', fill=#fff) center center no-repeat;
+    width: 40px;
+    height: 35px;
+    cursor: pointer;
+  
+    &:hover {
+      background-image: svg-load('hamburger.svg', fill=#fff);
+    }
+  }
+}

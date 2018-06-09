@@ -17,7 +17,16 @@ gulp.task("styles", () => {
   return gulp
     .src(`${config.SRC_DIR}/styles/main.scss`)
     .pipe($gp.sourcemaps.init())
-    .pipe($gp.plumber())
+    .pipe(
+      $gp.plumber({
+        errorHandler: $gp.notify.onError(function(err) {
+          return {
+            title: "Styles",
+            message: err.message
+          };
+        })
+      })
+    )
     .pipe($gp.postcss(require("./postcss.config")))
     .pipe($gp.rename("main.min.css"))
     .pipe($gp.if(env === "development", $gp.sourcemaps.write()))
@@ -51,7 +60,16 @@ gulp.task("scripts", () => {
 gulp.task("pug", () => {
   return gulp
     .src(`${config.VIEWS_DIR}/pages/*.pug`)
-    .pipe($gp.plumber())
+    .pipe(
+      $gp.plumber({
+        errorHandler: $gp.notify.onError(function(err) {
+          return {
+            title: "pug",
+            message: err.message
+          };
+        })
+      })
+    )
     .pipe($gp.pug())
     .pipe(gulp.dest(`${config.DIST_DIR}`))
     .pipe(reload({ stream: true }));

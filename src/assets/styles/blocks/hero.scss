@@ -1,0 +1,70 @@
+.hero {
+  width: 100%;
+  // height: 383px;
+  height: 620px;
+  // background: url(assets/images/about-header-1800.jpg) no-repeat;
+  padding-top: 26px;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  &__top {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__links {
+    width: 140px;
+
+    .socials__icon {
+      fill: #fff;
+
+      &:hover {
+        fill: #004cd1;
+      }
+    }
+  }
+
+  &__menu {
+    width: 40px;
+    right: 30px;
+  }
+
+  &__title {
+    display: flex;
+    width: 470px;
+    height: 470px;
+    margin: auto;
+    align-items: center;
+
+    .section-title {
+      width: 470px;
+      height: 270px;
+
+      &--hero-title {
+        position: absolute;
+      }
+
+      .section-title__pic {
+        width: 95%;
+        height: 95%;
+        fill: none; 
+        stroke: rgba(255, 255, 255, 0.07);
+
+        svg cirle {
+          fill: rgba(255, 255, 255, 0.07);
+        }
+      }
+    }
+  }
+
+  &__user {
+    z-index: 1;
+    display: flex;
+    margin: auto;
+    width: 223px;
+  }
+}
+
+

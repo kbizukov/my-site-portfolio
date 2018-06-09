@@ -1,0 +1,13 @@
+.down-btn {
+  display: block;
+  margin: auto;
+  width: 20px;
+  height: 18px;
+  cursor: pointer;
+  background: svg-load('arrow_down.svg', fill=#cac9cc) center center no-repeat;
+
+  &:hover {
+    background-image: svg-load('arrow_down.svg', fill=#cac9cc);
+  }
+
+}

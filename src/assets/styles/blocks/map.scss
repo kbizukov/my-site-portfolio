@@ -1,0 +1,13 @@
+.map {
+  background: url("assets/images/map.jpg");
+  width: 100%;
+  
+  .map__data {
+    @media screen {
+      width: 580px;
+      height: 283px;
+      background: rgba(255, 255, 255, .7);
+      margin: auto;
+    }
+  }
+}

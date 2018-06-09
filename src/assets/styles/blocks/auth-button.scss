@@ -4,17 +4,7 @@
   color: #fff;
   border: 1px solid #fff;
   background: transparent;
-  position: absolute;
-  top: 24px;
-  @media screen and (min-width: 1800px) {
-    right: 100px;
-  }
-  @media screen and (min-width: 1200px) and (max-width: 1799px) {
-    right: 20px;
-  }
-  
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-weight: 500;
+  @include roboto-medium;
 
   &:hover {
     border: none;

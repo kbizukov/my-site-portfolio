@@ -1,0 +1,20 @@
+.user {
+
+  .user__avatar {
+    margin: auto;
+    width: 141px;
+    height: 141px;
+  }
+
+  .user__description {
+    color: #fff;
+    text-align: center;
+  }
+  
+  .user__name {
+    @include roboto-medium;
+    margin-top: 11px;
+    margin-bottom: 3px;
+    font-size: 28px;
+  }
+}

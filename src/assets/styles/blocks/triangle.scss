@@ -1,0 +1,17 @@
+.triangle {
+  width: 100%;
+  height: auto;
+  // position: relative;
+  // top: -45px;
+  
+  &_fill_beige {
+    // fill: $triangle-beige;
+  background: svg-load('about_bg_left.svg', fill=$triangle-beige) center center no-repeat;
+
+  }
+  
+  &_fill_brown {
+    // fill: $triangle-brown;
+    background: svg-load('about_bg_left.svg', fill=$triangle-brown) center center no-repeat;
+  }
+}
