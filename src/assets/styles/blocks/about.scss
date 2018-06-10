@@ -1,5 +1,8 @@
 .about {
-  display: flex;
+
+  .about__split {
+    display: flex;
+  }
   
   &__left, &__right {
     // padding-top: 20px;
@@ -8,12 +11,14 @@
 
   &__left {
     background: $triangle-beige;
+    padding-top: 7px;
 
     &-wrapper {
       background-color: $triangle-beige;
       display: flex;
   
       .about__left-title {
+        margin-top: -95px;
         background: svg-load('stars2.svg', fill=none) center center no-repeat;
         stroke: rgba(16, 87, 209, .1);
         width: 100%;
@@ -23,10 +28,6 @@
         .block-title {
           transform: rotate(180deg);
         }
-      }
-  
-      .about__triangle {
-        width: 100%;
       }
   
       .about__left-title {
@@ -49,6 +50,8 @@
     .about__right-title {
       width: 270px;
       margin: auto;
+      position: relative;
+      top: -7px;
     }
 
     .about__right-description {

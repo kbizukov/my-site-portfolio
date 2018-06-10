@@ -1,8 +1,6 @@
 .skill {
   display: block;
   position: relative;
-  // width: 200px;
-  // height: 200px;
   width: 120px;
   height: 120px;
   margin: 0;
@@ -19,13 +17,13 @@
   &__circle {
     fill: transparent;
     stroke: #dfdcd5;
-    stroke-width: 20px;
+    stroke-width: 15px;
   }
   
   &__circle_above {
     stroke: #1056d1;
     stroke-dasharray: 251; // расстояние между линиями
-    stroke-dashoffset: 55; // смещение чтбы выглядело не заполненно 251 - круг полностью голый
+    // stroke-dashoffset: 55; // смещение чтбы выглядело не заполненно 251 - круг полностью голый
   }
 
   &__title {
@@ -33,5 +31,10 @@
     text-align: center;
     font-size: 13.96px;
     @include roboto-medium;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
   }
 }

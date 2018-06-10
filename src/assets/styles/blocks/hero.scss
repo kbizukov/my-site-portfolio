@@ -1,21 +1,25 @@
 .hero {
   width: 100%;
   // height: 383px;
-  height: 620px;
-  // background: url(assets/images/about-header-1800.jpg) no-repeat;
+  // height: 620px;
+  height: 100vh;
+  background: url(assets/images/about-header-1800.jpg) no-repeat;
+  background-size: cover;
   padding-top: 26px;
-  padding-left: 30px;
-  padding-right: 30px;
+  position: relative;
 
   &__top {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
   &__links {
     width: 140px;
+    
 
     .socials__icon {
       fill: #fff;
@@ -34,7 +38,8 @@
   &__title {
     display: flex;
     width: 470px;
-    height: 470px;
+    // height: 470px;
+    height: calc(100vh - 192px);
     margin: auto;
     align-items: center;
 
@@ -64,6 +69,16 @@
     display: flex;
     margin: auto;
     width: 223px;
+  }
+
+  .hero__down-btns {
+    z-index: 2;
+  }
+
+  .hero__triangle {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
   }
 }
 

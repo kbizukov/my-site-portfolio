@@ -1,0 +1,68 @@
+.footer {
+  height: 185px;
+  width: 100%;
+  margin-top: -185px;
+
+  &__top {
+    height: 147px;
+    padding-top: 27px;
+    background: rgba(28, 31, 41, 0.85);
+    display: flex;
+  }
+
+  &__col {
+    width: 33.3%;
+    padding-left: 29px;
+  }
+
+  &__divider {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 auto;
+    height: 87px;
+  }
+
+  .footer__description {
+    line-height: 24px;
+    max-width: 350px;
+  }
+
+  .footer__socials {
+    max-width: 140px;
+
+    .socials__icon {
+      fill: rgba(255, 255, 255, 0.5);
+
+      &:hover {
+        fill: #004cd1;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 16px;
+    color: #fff;
+    @include roboto-light;
+  }
+
+  &__bottom {
+    background: rgba($blue, .85);
+  }
+
+  .footer-contacts__data {
+    font-style: normal;
+
+    .footer-contacts__list {
+      line-height: 26px;
+    }
+  }
+
+  .footer__bottom {
+    text-align: center;
+    height: 38px;
+
+    .footer__row {
+      padding-top: 6px;
+      font-size: 15.98px;
+    }
+  }
+}
