@@ -25,14 +25,10 @@
 
   &__video {
     // object-fit: fill;
-    // width: 100vw;
-    // height: 100vh;
     z-index: -1;
     position: fixed;
     left: 0;
     top: 0;
-    filter:brightness(150%);
-    // min-width: 100%; 
-    // min-height: 100%;
+    // filter:brightness(150%);
   }
 }

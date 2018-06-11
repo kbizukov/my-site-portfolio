@@ -1,0 +1,19 @@
+.article {
+  &__header {
+    position: relative;
+    top: -8px;
+  }
+
+  &__date {
+    color: rgba(8, 60, 150, 0.7);
+    margin-bottom: 17px;
+  }
+  
+  &__text {
+    line-height: 26px;
+    
+    p {
+      margin-bottom: 9px;
+    }
+  }
+}

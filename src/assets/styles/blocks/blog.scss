@@ -1,0 +1,44 @@
+.hero__user {
+  width: 141px;
+  margin: auto;
+  z-index: 1;
+}
+
+.blog {
+  display: flex;
+  background: $triangle-blog;
+  padding-top: 48px;
+
+  &__nav {
+    width: 35%;
+    margin-right: 117px;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+
+    .nav__link {
+      text-decoration: none;
+    }
+  }
+
+  &__main {
+    width: 65%;
+  }
+
+  &__articles {
+    width: 880px;
+
+    .blog__article {
+      &:not(:first-child) {
+        margin-top: 70px;
+      }
+      margin-bottom: 70px;
+    }
+  }
+
+  .article-divider:not(:last-child) {
+    width: 100%;
+    height: 3px;
+    background: rgba(55, 62, 66, 0.07);
+  }
+}

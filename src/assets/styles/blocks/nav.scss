@@ -1,0 +1,30 @@
+.nav {
+  width: 280px;
+
+  .nav__item {
+    padding: 8px 17px;
+
+    &.active, &:first-child {
+      border-right: 3px solid $light-blue;
+      font-weight: 700;
+      
+      .nav__link {
+        color: $blue;
+      }
+    }
+    
+    .nav__link {
+      display: block;
+      height: 100%;
+      width: 100%;
+      color: #455a64;
+      line-height: 26px;
+      
+    }
+
+  }
+
+  // &--blog {
+
+  // }
+}

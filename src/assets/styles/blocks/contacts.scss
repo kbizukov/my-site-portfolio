@@ -44,21 +44,5 @@
         fill: #004cd1;
       }
     }
-
-  }
-}
-
-.contacts--footer {
-  background: none;
-  width: 33.3%;
-  height: auto;
-  
-  &__list {
-    display: inline-block;
-  }
-
-  .contacts__item {
-    display: inline-block;
-    @include roboto-light;
   }
 }

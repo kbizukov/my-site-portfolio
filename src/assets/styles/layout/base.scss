@@ -51,7 +51,7 @@ p {
   padding: 0;
 }
 
-a {
+.intext-link {
   color: $blue;
 
   &:hover {
@@ -76,13 +76,22 @@ h2.block-subtitle {
   z-index : 1;
   text-transform: uppercase;
 
-  &:after {
-    content : "";
-    display: block;
-    margin: 0 auto;
-    padding-top: 15px; 
-    height: 3px;
-    width: 89px; 
-    border-bottom: 3px solid #98999c;
+  &--article {
+    text-align: left;
+    top: -14px;
+    padding-bottom: 0;
+    text-transform: none;
+  }
+
+  &:not(.block-subtitle--article) {
+    &:after {
+      content : "";
+      display: block;
+      margin: 0 auto;
+      padding-top: 15px; 
+      height: 3px;
+      width: 89px; 
+      border-bottom: 3px solid #98999c;
+    }
   }
 }
