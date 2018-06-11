@@ -8,13 +8,28 @@
   display: flex;
   background: $triangle-blog;
   padding-top: 48px;
+  justify-content: center;
 
   &__nav {
-    width: 35%;
-    margin-right: 117px;
-    text-align: right;
-    display: flex;
-    justify-content: flex-end;
+    display: none;
+
+    @media screen and (min-width: 1800px) {
+      width: 30%;
+      display: block;
+      margin-right: 117px;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+      width: 25%;
+      display: block;
+      margin-right: 77px;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+    }
 
     .nav__link {
       text-decoration: none;
@@ -22,11 +37,29 @@
   }
 
   &__main {
-    width: 65%;
+    width: 100%;
+
+    @media screen and (min-width: 1800px) {
+      width: 70%;
+    }
+
+    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+      width: 75%;
+    }
   }
 
   &__articles {
-    width: 880px;
+    max-width: 880px;
+    margin: 0 20px;
+
+    
+    @media screen and (min-width: 768px) {
+      margin: auto;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin: 0 20px;
+    }
 
     .blog__article {
       &:not(:first-child) {

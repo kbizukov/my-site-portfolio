@@ -5,17 +5,59 @@ block content
     button.auth-button Авторизоваться
 
   .welcome-wrapper
-    .welcome
-      include ../common/user
+    .welcome-turner
+      .welcome
+        include ../common/user
 
-      .welcome__socials
-        include ../common/socials
+        .welcome__socials
+          include ../common/socials
 
-      nav.bottom-nav
-        ul.bottom-nav__list
-          li.bottom-nav__item.bottom-nav__item--works
-            a(class="bottom-nav__link" href="works.html") Мои работы
-          li.bottom-nav__item.bottom-nav__item--about
-            a(class="bottom-nav__link" href="about.html") Обо мне
-          li.bottom-nav__item.bottom-nav__item--blog
-            a(class="bottom-nav__link" href="blog.html") Блог
+        nav.bottom-nav
+          ul.bottom-nav__list
+            li.bottom-nav__item.bottom-nav__item--works
+              a(class="bottom-nav__link" href="works.html") Мои работы
+            li.bottom-nav__item.bottom-nav__item--about
+              a(class="bottom-nav__link" href="about.html") Обо мне
+            li.bottom-nav__item.bottom-nav__item--blog
+              a(class="bottom-nav__link" href="blog.html") Блог
+
+      form.login(action="")
+        h2.login__title Авторизуйтесь
+        .login__inputs
+          .login__input-container
+            .login__icon-container
+              +icon('login', 'login__icon')
+            input.login__input(type=text placeholder="Логин" required)
+          .login__input-container
+            .login__icon-container
+              +icon('password', 'login__icon')
+            input.login__input(type=text placeholder="Пароль" required)
+        
+        .login__confirm-not-robot
+          .login__confirm-row
+            label.login__confirm-label
+              input.login__confirm-input(type="checkbox" required)
+              .login__confirm-icon-container
+                +icon('check', 'login__icon login__icon--checkbox')
+              span.login__label-text Я человек
+            
+          .login__confirm-text Вы точно не робот?
+          
+          .login__confirm-row
+            .login__confirm-radios
+              label.login__confirm-label.login__confirm-label--first
+                input.login__confirm-input(type="radio" name="confirm-not-robot")
+                .login__confirm-icon-container.login__confirm-icon-container--circle
+                span.login__label-text Да
+
+              label.login__confirm-label
+                input.login__confirm-input(type="radio" name="confirm-not-robot")
+                .login__confirm-icon-container.login__confirm-icon-container--circle
+                span.login__label-text Не уверен
+
+        nav.bottom-nav
+          ul.bottom-nav__list
+            li.bottom-nav__item.bottom-nav__item--main
+              a(class="bottom-nav__link" href="") На главную
+            li.bottom-nav__item.bottom-nav__item--enter
+              a(class="bottom-nav__link" href="" type="submit") Войти
