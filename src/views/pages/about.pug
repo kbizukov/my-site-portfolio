@@ -56,7 +56,7 @@ block content
         .about__right-content
           -
             var skills = [
-              ['Frontend', [['HTML5', 75, 62.75], ['CSS3', 70, 75.3], ['JavaScript & jQuery', 65, 87.85]]],
+              ['Frontend', [['HTML5', 75, 62.75], ['CSS3', 70, 75.3], ['JavaScript & jQuery', 75, 62.75]]],
               ['Backend', [['PHP', 35, 163.15], ['mySQL', 50, 125.5], ['Node.js & npm', 40, 150.6], ['Mongo.db', 10, 225.9]]],
               ['Workflow', [['Git', 40, 150.6], ['Gulp', 50, 125.5], ['Bower', 70, 75.3]]]
             ]
@@ -70,7 +70,7 @@ block content
                       figure.skill(data-percents=`${skill[1]}`)
                         svg(viewBox="0 0 100 100" preserveAspectRation="none").skill__figure
                           circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                          circle(cx="50" cy="50" r="40" stroke-dashoffset=skill[2]).skill__circle.skill__circle_above
+                          circle(cx="50" cy="50" r="40" stroke-dashoffset=skill[2] opacity= '0.'+skill[1]).skill__circle.skill__circle_above
                         span.skill__title #{skill[0]}
     
   section.map
