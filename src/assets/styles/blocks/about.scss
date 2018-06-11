@@ -19,15 +19,23 @@
   
       .about__left-title {
         margin-top: -95px;
-        background: svg-load('stars2.svg', fill=none) center center no-repeat;
-        stroke: rgba(16, 87, 209, .1);
         width: 100%;
+        position: relative;
 
-        transform: rotate(180deg);
-
-        .block-title {
-          transform: rotate(180deg);
+        .about-header-svg {
+          position: absolute;
+          top: 28px;
+          left: -4px;
+          opacity: 0.1;
+          width: 289px;
+          height: 186px;
+          transform: rotate(189deg);
         }
+
+
+        // .block-title {
+        //   transform: rotate(180deg);
+        // }
       }
   
       .about__left-title {
@@ -74,6 +82,7 @@
 
   &__avatar {
     width: 100%;
+    filter: grayscale(30%);
   }
 
   &__text p {
