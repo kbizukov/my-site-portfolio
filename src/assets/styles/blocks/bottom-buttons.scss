@@ -47,9 +47,23 @@ $borderColor: rgba(114, 149, 211, 1);
       [type="submit"] {
 
         &:hover {
-          background: $light-blue;
           background: $blue;
         }
+      }
+    }
+  
+    &--send {
+      width: 50%;
+      border-right: none !important;
+    }
+  
+    &--clear {
+      width: 50%;
+      background: none;
+      border-left: none !important;
+
+      &:hover {
+        background: none;
       }
     }
   }
@@ -58,10 +72,16 @@ $borderColor: rgba(114, 149, 211, 1);
     padding-top: 12px;
     color: #fff;
     text-decoration: none;
+    text-align: center;
     display: block;
     margin: auto;
     width: 100%;
     height: 100%;
+    cursor: pointer;
+
+    &--clear {
+      color: rgba(255, 255, 255, .5);
+    }
 
     &[type="submit"] {
       -webkit-appearance: none;

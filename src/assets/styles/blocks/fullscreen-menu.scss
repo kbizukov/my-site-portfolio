@@ -1,0 +1,55 @@
+.fullscreen-menu {
+  // display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  max-width: 1800px;
+  height: 100vh;
+  background: rgba(24, 54, 105, .87);
+  z-index: 3;
+
+  .fullscreen-nav {
+    width: 100%;
+    height: 100%;
+
+    .fullscreen-menu__list {
+      display: flex;
+      justify-content: center;
+      flex-flow: column wrap;
+      width: 100%;
+      height: 100%;
+    }
+  
+    .fullscreen-menu__item {
+      padding-bottom: 31px;
+      padding-top: 0;
+      color: #fff;
+    }
+    
+    .fullscreen-menu__link {
+      padding-bottom: 11px;
+      font-family: 'Sansus Webissimo';
+      text-align: center;
+      font-size: 63px;
+      text-transform: uppercase;
+      width: 100%;
+      height: 100%;
+      display: block;
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+        padding-bottom: 0;
+
+        &:after {
+          content : "";
+          display: block;
+          margin: 0 auto;
+          padding-top: 8px;
+          width: 89px; 
+          border-bottom: 3px solid #fff;
+        }
+      }
+    }
+  }
+}

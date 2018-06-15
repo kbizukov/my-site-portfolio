@@ -1,20 +1,25 @@
 .user {
 
-  .user__avatar {
+  &__avatar {
     margin: auto;
     width: 141px;
     height: 141px;
   }
 
-  .user__description {
+  &__description {
     color: #fff;
     text-align: center;
   }
   
-  .user__name {
+  &__name {
     @include roboto-medium;
     margin-top: 11px;
     margin-bottom: 3px;
     font-size: 28px;
+    line-height: 41px;
+  }
+
+  &__info {
+    line-height: 24px;
   }
 }

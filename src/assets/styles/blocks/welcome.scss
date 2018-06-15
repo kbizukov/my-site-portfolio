@@ -22,10 +22,10 @@
     width: 380px;
     position: relative;
     margin: auto;
+    z-index: 1;
   }
 
   .welcome {
-    z-index: 1;
     transform: rotateY(0deg);
     transition: 0.6s;
 

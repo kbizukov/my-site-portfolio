@@ -1,0 +1,38 @@
+.contact-me {
+  width: 380px;
+  height: 459px;
+  margin: auto;
+  margin-bottom: 70px;
+  background: rgba(255, 255, 255, .05);
+
+  &__title {
+    padding-top: 37px;
+    padding-bottom: 30px !important;
+    color: #fff;
+  }
+
+  &__fields {
+    padding: 0 20px;
+  }
+
+  &__field {
+    font-family: 'Roboto';
+    width: 100%;
+    color: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .07);
+    border: none;
+    margin-bottom: 20px;
+    padding: 16px 17px;
+  }
+
+  &__name, &__email {
+    height: 45px;
+  }
+
+  &__message {
+    // padding: 13px 17px;
+    height: 130px;
+    resize: none;
+    margin-bottom: 15px;
+  }
+}

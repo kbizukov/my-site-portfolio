@@ -13,7 +13,7 @@ block content
         include ../common/socials
     
       .hero__menu
-        a(href="").hamburger.inlined-svg
+        +hamburger('')
 
     .hero__title
       .section-title.section-title--hero-title
@@ -22,7 +22,7 @@ block content
       .hero__user
         include ../common/user
 
-    a(href="").down-btn.hero__down-btns
+    a(href="#about").down-btn.hero__down-btns
 
     .hero__triangle
       svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
@@ -30,12 +30,12 @@ block content
         polygon(points="1000,0 1000,86 500,86 500,75.5").triangle__right.triangle__right_brown
     
 
-  section.about
+  section.about#about
     .about__split
       .about__left
         .about__left-wrapper
           .about__left-title
-            include ../common/stars2
+            +header-svg('--about', '#1057d1')
             h1.block-title Обо мне
           .about__left-content
             .user-description
@@ -87,7 +87,7 @@ block content
                 ['skype_n', 'kirillbizukov'],
                 ['phone_n', '+7 951 318 08 89'],
                 ['envelope_n', 'kirillbizukov@gmail.com'],
-                ['map_n', 'Новосибирск, ул. Инская, д.14']
+                ['map_n', 'Курск']
               ]
             each item in contacts
               li.contacts__item.contacts-row

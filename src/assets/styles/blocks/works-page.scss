@@ -1,0 +1,76 @@
+.works-background {
+  width: 1800px;
+  height: calc(100vh + 172px);
+  background: url('./assets/images/about-header-1800.jpg') no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.works-title {
+  height: 171px;
+  width: 100%;
+  background: $triangle-works;
+}
+
+.works-preview {
+  display: flex;
+  min-height: 750px;
+
+  &__left, &__right {
+    width: 50%;
+  }
+
+  &__left {
+    background: $triangle-beige;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    .works-preview__content {
+      width: 330px;
+      min-height: 260px;
+      margin: auto;
+      @include roboto-medium;
+
+      .works-preview__description {
+        color: $blue;
+        margin-bottom: 55px;
+      }
+
+      .works-preview__button {
+        background: #004cd1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px;
+        color: #fff;
+        width: 200px;
+        height: 45px;
+        margin: auto;
+        text-decoration: none;
+
+        // &:hover {
+        //   background: $blue;
+        // }
+
+        .works-preview__link {
+          color: #fff;
+        }
+
+        .works-preview__icon {
+          width: 20px;
+          height: 20px;
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  &__right {
+    background: $triangle-brown;
+  }
+}

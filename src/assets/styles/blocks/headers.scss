@@ -1,0 +1,51 @@
+h1.block-title {
+  font-family: 'Sansus Webissimo';
+  text-align: center;
+  padding: 70px 0;
+  font-size: 63px;
+  text-transform: uppercase;
+  // line-height: 56px;
+
+  &--works {
+    color: #fff;
+    position: relative;
+    top: -227px;
+  }
+}
+
+h2.block-subtitle {
+  font-family: 'Sansus Webissimo';
+  text-align: center;
+  padding-bottom: 25px;
+  font-size: 35px; 
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  line-height: 41px;
+
+  &--article {
+    text-align: left;
+    top: -14px;
+    padding-bottom: 0;
+    text-transform: none;
+  }
+
+  &:not(.block-subtitle--article) {
+    &:after {
+      content : "";
+      display: block;
+      margin: 0 auto;
+      padding-top: 15px; 
+      height: 3px;
+      width: 89px; 
+      border-bottom: 3px solid #98999c;
+    }
+  }
+
+  &--contact {
+    &:after {
+      border-bottom: 3px solid rgba(255, 255, 255, .5) !important;
+      padding-top: 19px !important; 
+    }
+  }
+}

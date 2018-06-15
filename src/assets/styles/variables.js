@@ -4,5 +4,8 @@ module.exports = {
   "light-blue": "#0548be",
   "triangle-beige": "#f2f0e8",
   "triangle-brown": "#eae8e2",
-  "triangle-blog": "#faf8f0"
+  "triangle-blog": "#faf8f0",
+  "triangle-works": "rgba(13, 17, 32, 0.85)",
+  "arrow-down": "#cac9cc",
+  "arrow-down-hover": "#fff"
 };

@@ -4,10 +4,14 @@
   width: 25px;
   height: 18px;
   cursor: pointer;
-  background: svg-load('arrow_down.svg', fill=#cac9cc) center center no-repeat;
+  background: svg-load('arrow_down.svg', fill=$arrow-down) center center no-repeat;
 
   &:hover {
-    background-image: svg-load('arrow_down.svg', fill=#cac9cc);
+    background-image: svg-load('arrow_down.svg', fill=$arrow-down-hover);
+  }
+
+  &--reverted {
+    transform: rotate(180deg);
   }
 
 }

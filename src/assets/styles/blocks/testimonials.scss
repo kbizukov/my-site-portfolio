@@ -1,0 +1,33 @@
+.testimonials {
+  background: url(assets/images/works-footer-1800.jpg) no-repeat;
+  width: 100%;
+  padding-bottom: 255px;
+
+  &__header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 340px;
+    margin: auto;
+
+    .testimonials__title {
+      color: #fff;
+      line-height: 66px;
+      text-align: center;
+      padding-top: 57px;
+      padding-bottom: 63px;
+    }
+  
+    .testimonials__icon {
+      position: absolute;
+      height: 212px;
+      opacity: .15;
+      top: 25px;
+      left: calc(50% - 88px);
+      transform: rotate(25.3deg);
+      width: 176px;
+    }
+  }
+}
+

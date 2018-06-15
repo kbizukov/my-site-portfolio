@@ -1,0 +1,104 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Мои работы'
+
+block scripts
+  script(src='works.bundle.js')
+
+block content
+  include ../common/menu
+
+  section#top.works-background
+
+  section.hero.hero--works
+    .hero__top
+      .hero__links
+        include ../common/socials
+    
+      .hero__menu
+        //- a(href="").hamburger.inlined-svg
+        +hamburger('')
+
+    .hero__title
+      .section-title.section-title--hero-title
+        include ../common/hero_title_svg
+
+      .hero__user
+        include ../common/user
+
+    a(href="#works").down-btn.hero__down-btns
+
+    .hero__bottom
+      .hero__triangle
+        svg.triangle.triangle--works(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
+          polygon(points="0,0 0,86 500.8,86 500.8,75.5")
+          polygon(points="1000,0 1000,86 500,86 500,75.5")
+
+  section.works-title#works
+    +header-svg('--works', '#fff')
+    h1.block-title.block-title--works Мои работы
+    
+
+  section.works-preview
+    .works-preview__left
+      .works-preview__content
+        .works-preview__title
+          h2.block-subtitle Сайт школы онлайн образования
+        .works-preview__description HTML, CSS, JAVASCRIPT
+        a.works-preview__button(href="#")
+          +icon('link', 'works-preview__icon')
+          span.works-preview__link Посмотреть сайт
+
+    .works-preview__right
+      .slider.works-preview__slider
+        .slider__main-slide
+          +image('works-preview.png', 'Сайт школы онлайн образования', 'works-preview__img')
+        .slider__thumbnails
+          .slider__thumbmail.slider__thumbmail--prev
+            +image('preview-prev.jpg', 'Предыдущий проект', 'slider__thumbnail-img')
+            .slider__nav-btn.slider__nav-btn--prev
+              +icon('arrow_down', 'slider__nav-icon')
+          .slider__thumbmail.slider__thumbmail--next
+            +image('preview-next.jpg', 'Следующий проект', 'slider__thumbnail-img')
+            .slider__nav-btn.slider__nav-btn--next
+              +icon('arrow_down', 'slider__nav-icon slider__nav-icon--next')
+    
+  section.testimonials
+    .testimonials__header
+      h1.block-title.testimonials__title Что обо мне говорят
+      .testimonials__icon
+        include ../common/stars3
+
+    .mentions
+      ul.mentions__list
+        -
+          var mentions = [
+            ['dima.png', 'Этот парень проходил обучение веб-разработке не где-то, а в Loftschool! 5 недель только самых тяжелых испытаний и бессонных ночей!', 'Ковальчук Дмитрий', 'основатель Loftschool'],
+            ['vova.png','Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!', 'Сабанцев Владимир', 'преподаватель']
+          ]
+        each mention in mentions
+          li.mentions__item
+            .mentions__icon
+              +image(`${mention[0]}`, `${mention[2]}`, 'mentions__icon-img')
+            blockquote.mentions__quote #{mention[1]}
+            .mentions__author #{mention[2]}
+            cite.mentions__description &mdash; #{mention[3]}
+
+    form.contact-me
+      h2.block-subtitle.block-subtitle--contact.contact-me__title Связаться со мной
+      .contact-me__fields
+        input.contact-me__name.contact-me__field(type="text" placeholder="Ваше имя")
+        input.contact-me__email.contact-me__field(type="email" placeholder="Ваш email")
+        textarea.contact-me__message.contact-me__field(placeholder="Ваше сообщение")
+      nav.bottom-nav
+          ul.bottom-nav__list
+            li.bottom-nav__item.bottom-nav__item--send
+              a.bottom-nav__link Отправить
+            li.bottom-nav__item.bottom-nav__item--clear
+              a.bottom-nav__link.bottom-nav__link--clear Очистить
+
+    a(href="#top").down-btn.down-btn--reverted.works-scroll-top-btn
+
+  .works__footer--over
+    include ../common/footer

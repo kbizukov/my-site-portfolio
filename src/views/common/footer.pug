@@ -8,18 +8,7 @@ footer.footer
 
       .footer__col
         .footer__row
-          nav.menu
-            ul.menu__list
-              -
-                var menu = [
-                  ['works.html', 'Мои работы'],
-                  ['about.html', "Обо мне"],
-                  ['blog.html', "Блог"],
-                  ['/', "Авторизация"]
-                ]
-              each item in menu
-                li.menu__item
-                  a(href=`${item[0]}`).menu__link #{item[1]}
+          +menu('menu--footer')
 
           .footer__row
             //- -
@@ -43,7 +32,7 @@ footer.footer
                   'kirillbizukov',
                   'kirillbizukov@gmail.com',
                   '+7 951 318 08 89',
-                  'Новосибирск, ул. Инская, д.14'
+                  'Курск'
                 ]
               each item in contacts
                 li.footer-contacts__item.footer__text #{item}

@@ -19,26 +19,7 @@
   
       .about__left-title {
         margin-top: -95px;
-        width: 100%;
         position: relative;
-
-        .about-header-svg {
-          position: absolute;
-          top: 28px;
-          left: -4px;
-          opacity: 0.1;
-          width: 289px;
-          height: 186px;
-          transform: rotate(189deg);
-        }
-
-
-        // .block-title {
-        //   transform: rotate(180deg);
-        // }
-      }
-  
-      .about__left-title {
         width: 45%;
         height: 229px;
       }
