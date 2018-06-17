@@ -4,7 +4,7 @@
   .nav__item {
     padding: 8px 17px;
 
-    &.active, &:first-child {
+    &--active {
       border-right: 3px solid $light-blue;
       font-weight: 700;
       
@@ -24,7 +24,17 @@
 
   }
 
-  // &--blog {
+  &--blog {
+    position: relative;
+    top: -6px;
 
-  // }
+    .nav__item {
+      padding: 9px 17px 7px 12px ;
+      margin-bottom: 10px;
+
+      &:not(.nav__item--active) {
+        padding: 9px 20px 7px 12px;
+      }
+    }
+  }
 }

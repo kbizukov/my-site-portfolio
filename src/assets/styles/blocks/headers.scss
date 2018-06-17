@@ -9,7 +9,8 @@ h1.block-title {
   &--works {
     color: #fff;
     position: relative;
-    top: -227px;
+    top: -228px;
+    padding-top: 71px;
   }
 }
 
@@ -28,6 +29,7 @@ h2.block-subtitle {
     top: -14px;
     padding-bottom: 0;
     text-transform: none;
+    margin-bottom: 4px;
   }
 
   &:not(.block-subtitle--article) {
@@ -39,6 +41,37 @@ h2.block-subtitle {
       height: 3px;
       width: 89px; 
       border-bottom: 3px solid #98999c;
+    }
+  }
+
+  &--works {
+    padding-bottom: 23px;
+
+    &:after {
+      padding-top: 18px !important;
+    }
+  }
+
+  &--about-left {
+    padding-bottom: 26px;
+    &:after {
+      padding-top: 19px !important;
+    }
+  }
+
+  &--about-right {
+    padding-bottom: 18px;
+
+    &:after {
+      padding-top: 19px !important;
+    }
+  }
+
+  &--map-contacts {
+    padding-bottom: 30px;
+
+    &:after {
+      padding-top: 19px !important;
     }
   }
 

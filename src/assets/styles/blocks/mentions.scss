@@ -15,13 +15,21 @@
     text-align: center;
     font-style: italic;
     margin-bottom: 67px;
+    position: relative;
 
     &:nth-child(2n+1) {
       margin-right: 20px;
     }
 
+    .mentions__bg-pic {
+      position: absolute;
+      top: 71px;
+      left: 2px;
+    }
+
     .mentions__icon {
       margin-bottom: 11px;
+      height: 83px;
     }
 
     .mentions__quote {
@@ -30,7 +38,11 @@
       width: 100%;
       margin: 0;
       line-height: 26px;
-      margin-bottom: 19px;
+      margin-bottom: 18px;
+    }
+
+    .mentions__author {
+      margin-bottom: 2px;
     }
   }
 }

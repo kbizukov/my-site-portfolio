@@ -18,11 +18,18 @@
   z-index: 1;
 
   .welcome-turner {
-    height: 407px;
     width: 380px;
     position: relative;
     margin: auto;
     z-index: 1;
+
+    &--welcome {
+      height: 404px;
+    }
+
+    &--login {
+      height: 405px;
+    }
   }
 
   .welcome {
@@ -32,6 +39,11 @@
     &.rotate {
       transform: rotateY(180deg);
       transition: 0.6s;
+    }
+
+    .user__name {
+      margin-top: 10px;
+      margin-bottom: 0;
     }
   }
 

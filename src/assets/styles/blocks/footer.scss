@@ -1,5 +1,9 @@
-.about__footer--over, .works__footer--over {
+.about__footer--over {
   margin-top: -185px;
+}
+
+.works__footer--over {
+  margin-top: -187px;
 }
 
 .footer {
@@ -20,17 +24,20 @@
 
   &__divider {
     border-left: 1px solid rgba(255, 255, 255, 0.2);
-    margin: 0 auto;
+    margin-top: 3px;
     height: 87px;
   }
 
   .footer__description {
     line-height: 24px;
     max-width: 350px;
+    margin-top: -2px;
+    margin-left: 1px;
   }
 
   .footer__socials {
     max-width: 140px;
+    margin-left: 4px;
 
     .socials__icon {
       fill: rgba(255, 255, 255, 0.5);
@@ -49,6 +56,10 @@
 
   &__bottom {
     background: rgba($blue, .85);
+  }
+
+  .footer-contacts {
+    margin-top: -3px;
   }
 
   .footer-contacts__data {

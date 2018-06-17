@@ -15,20 +15,19 @@ block content
       .hero__menu
         +hamburger('')
 
-    .hero__title
-      .section-title.section-title--hero-title
+    .hero__title.hero__title--about
+      .hero__title-svg-cntainer
         include ../common/hero_title_svg
 
-      .hero__user
+      .hero__user.hero__user--about
         include ../common/user
 
-    a(href="#about").down-btn.hero__down-btns
+    a(href="#about").down-btn.hero__down-btn.hero__down-btn--about
 
     .hero__triangle
-      svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-        polygon(points="0,0 0,86 500.8,86 500.8,75.5").triangle__left.triangle__left_beige
-        polygon(points="1000,0 1000,86 500,86 500,75.5").triangle__right.triangle__right_brown
-    
+      svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 98" preserveaspectratio="none")
+        polygon(points="0,0 0,98 500.8,98 500.8,88.5").triangle__left.triangle__left_beige
+        polygon(points="1000,0 1000,98 500,98 500,88.5").triangle__right.triangle__right_brown
 
   section.about#about
     .about__split
@@ -36,29 +35,31 @@ block content
         .about__left-wrapper
           .about__left-title
             +header-svg('--about', '#1057d1')
-            h1.block-title Обо мне
+            h1.block-title.about__left-block-title Обо мне
           .about__left-content
-            .user-description
+            .user-description.about__user-description
               .user-description__image
                 +image("me-big.jpg", "Мое фото", "user-description__avatar")
               .user-description__data
                 .user-description__title
-                  h2.block-subtitle Кто я
+                  h2.block-subtitle.block-subtitle--about-left Кто я
                 .user-description__text.text-content
-                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sunt vero fuga eos illo maiores necessitatibus molestiae unde aut quia, magnam deleniti dolore recusandae quos, facere, iste fugiat eaque ipsa!
-                  p Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sunt vero fuga eos illo maiores necessitatibus molestiae unde aut quia, magnam deleniti dolore recusandae quos, facere, iste fugiat eaque ipsa!
+                  p Я веб разработчик из Курска. Мне 26 лет. Я занимаюсь разработкой современных сайтов и приложений. Опыт в разработке 3,5 года. Мне нравить делать интерестные и современные проекты.
+                  p Этот сайт я сделал в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент. А пока посмотрите как тут все классно и красиво!
 
       .about__right
         .about__right-title
-          h2.block-subtitle Чем я могу быть вам полезен
+          h2.block-subtitle.block-subtitle--about-right Чем я могу быть вам полезен
         .about__right-description.text-content
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet sunt vero fuga eos illo maiores necessitatibus molestiae unde aut quia, magnam deleniti dolore recusandae quos, facere, iste fugiat eaque ipsa!
+          p Больше всего меня привлекает Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
         .about__right-content
+          #skills-container
+
           -
             var skills = [
-              ['Frontend', [['HTML5', 75, 62.75], ['CSS3', 70, 75.3], ['JavaScript & jQuery', 75, 62.75]]],
-              ['Backend', [['PHP', 35, 163.15], ['mySQL', 50, 125.5], ['Node.js & npm', 40, 150.6], ['Mongo.db', 10, 225.9]]],
-              ['Workflow', [['Git', 40, 150.6], ['Gulp', 50, 125.5], ['Bower', 70, 75.3]]]
+              ['Frontend', [['HTML5', 75, 62.75], ['CSS3', 70, 75.3], ['JavaScript & jQuery', 75, 62.75], ['Backbone & Marionette', 75, 62.75], ['Vue.js', 35, 163.15]]],
+              ['Backend', [['PHP', 35, 163.15], ['mySQL', 50, 125.5], ['Node.js & npm', 50, 125.5], ['Mongo.db', 10, 225.9], ['Sails.js', 75, 62.75]]],
+              ['WorkFlow', [['Git', 40, 150.6], ['Gulp', 50, 125.5], ['Webpack', 35, 163.15], ['Bower', 70, 75.3]]]
             ]
           ul.skills-list
             each skillsrow in skills
@@ -79,7 +80,7 @@ block content
     .map__data
       .contacts
         .contacts__title
-          h2.block-subtitle Контакты
+          h2.block-subtitle.block-subtitle--map-contacts Контакты
         address.contacts__data
           ul.contacts__list
             -

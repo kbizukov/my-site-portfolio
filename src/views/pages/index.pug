@@ -5,7 +5,7 @@ block content
     button.auth-button Авторизоваться
 
   .welcome-wrapper
-    .welcome-turner
+    .welcome-turner.welcome-turner--welcome.welcome-turner--login
       .welcome
         include ../common/user
 
@@ -26,7 +26,7 @@ block content
         .login__inputs
           .login__input-container
             .login__icon-container
-              +icon('login', 'login__icon')
+              +icon('login', 'login__icon login__icon--login')
             input.login__input(type=text placeholder="Логин" required)
           .login__input-container
             .login__icon-container
@@ -47,7 +47,7 @@ block content
             .login__confirm-radios
               label.login__confirm-label.login__confirm-label--first
                 input.login__confirm-input(type="radio" name="confirm-not-robot")
-                .login__confirm-icon-container.login__confirm-icon-container--circle
+                .login__confirm-icon-container.login__confirm-icon-container--circle.login__confirm-icon-container--yes
                 span.login__label-text Да
 
               label.login__confirm-label

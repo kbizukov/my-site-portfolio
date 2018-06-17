@@ -17,23 +17,21 @@ block content
         include ../common/socials
     
       .hero__menu
-        //- a(href="").hamburger.inlined-svg
         +hamburger('')
 
-    .hero__title
-      .section-title.section-title--hero-title
+    .hero__title.hero__title--works
+      .hero__title-svg-cntainer.hero__title-svg-cntainer--works
         include ../common/hero_title_svg
 
-      .hero__user
+      .hero__user.hero__user--works
         include ../common/user
 
-    a(href="#works").down-btn.hero__down-btns
+    a(href="#works").down-btn.hero__down-btn
 
     .hero__bottom
       .hero__triangle
-        svg.triangle.triangle--works(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-          polygon(points="0,0 0,86 500.8,86 500.8,75.5")
-          polygon(points="1000,0 1000,86 500,86 500,75.5")
+        svg.triangle.triangle--works(version='1.1', xmlns='http://www.w3.org/2000/svg', width='100%', height='100%', viewbox='0 0 2032 193.7', xml:space='preserve')
+          polygon(fill-rule='evenodd', clip-rule='evenodd', points='2032,193.7 2032,0 1016,173 0,0 0,193.7')
 
   section.works-title#works
     +header-svg('--works', '#fff')
@@ -44,7 +42,7 @@ block content
     .works-preview__left
       .works-preview__content
         .works-preview__title
-          h2.block-subtitle Сайт школы онлайн образования
+          h2.block-subtitle.block-subtitle--works Сайт школы онлайн образования
         .works-preview__description HTML, CSS, JAVASCRIPT
         a.works-preview__button(href="#")
           +icon('link', 'works-preview__icon')
@@ -79,6 +77,7 @@ block content
           ]
         each mention in mentions
           li.mentions__item
+            +image('quotes.png', 'кавычки', 'mentions__bg-pic')
             .mentions__icon
               +image(`${mention[0]}`, `${mention[2]}`, 'mentions__icon-img')
             blockquote.mentions__quote #{mention[1]}

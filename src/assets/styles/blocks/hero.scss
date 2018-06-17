@@ -21,7 +21,7 @@
     padding-left: 30px;
     padding-right: 30px;
     position: absolute;
-    top: 26px;
+    top: 28px;
   }
 
   &__links {
@@ -44,12 +44,19 @@
   &__title {
     display: flex;
     width: 460px;
-    // height: 460px;
+    height: 460px;
     // height: calc(100vh - 157px);
-    height: calc(100vh - -9px);
     margin: auto;
     align-items: center;
     position: relative;
+
+    &--blog {
+      height: calc(100vh - -9px);
+    }
+
+    &--works, &--about {
+      height: calc(100vh - 91px);
+    }
 
     &-header {
       color: #fff;
@@ -58,14 +65,15 @@
       line-height: 1.33;
     }
 
-    .section-title {
+    .hero__title-svg-cntainer {
       width: 459px;
       height: 271px;
+      position: absolute;
+      top: calc(50% - 145px);
+      left: calc(50% - 253px);
 
-      &--hero-title {
-        position: absolute;
-        top: calc(50% - 145px);
-        left: calc(50% - 253px);
+      &--works {
+        top: calc(50% - 147px);
       }
     }
   }
@@ -86,12 +94,37 @@
     }
 
     &--blog {
-      padding-top: 14px;
+      padding-top: 16px;
+    }
+
+    &--works {
+      height: 221px;
+
+      .user__name {
+        margin-bottom: 1px;
+        margin-top: 22px;
+      }
+    }
+
+    &--about {
+      height: 221px;
+
+      .user__name {
+        margin-bottom: 1px;
+        margin-top: 23px;
+      }
     }
   }
 
-  .hero__down-btns {
+  .hero__down-btn {
     z-index: 2;
+    position: absolute;
+    bottom: 89px;
+    left: calc(50% - 12.5px);
+
+    &--about {
+      bottom: 88px;
+    }
   }
 
   .hero__triangle {

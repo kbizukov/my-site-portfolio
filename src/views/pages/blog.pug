@@ -15,8 +15,8 @@ block content
       .hero__menu
         +hamburger('')
 
-    .hero__title
-      .section-title.section-title--hero-title
+    .hero__title.hero__title--blog
+      .hero__title-svg-cntainer
         include ../common/hero_title_svg
 
       .hero__user.hero__user--blog
@@ -29,14 +29,7 @@ block content
 
     .hero__triangle
       svg.triangle(xmlns='http://www.w3.org/2000/svg' x='0px', y='0px', width='100%', height='100%', viewbox='0 0 2032 173.368')
-        g
-          polygon(fill-rule='evenodd', clip-rule='evenodd', fill='#faf8f0', points='2032,173.368 2032,0 1016,173 0,0 0,173.368')
-
-
-      //- svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 85" preserveaspectratio="none")
-      //-   polygon(points="0,0 0,86 500.8,86 500.8,75.5").triangle__left.triangle--blog
-      //-   polygon(points="1000,0 1000,86 500,86 500,75.5").triangle__right.triangle--blog
-    
+        polygon(fill-rule='evenodd', clip-rule='evenodd', fill='#faf8f0', points='2032,173.368 2032,0 1016,173 0,0 0,173.368')
 
   section.blog
     aside.blog__nav
@@ -50,8 +43,8 @@ block content
               ['why-pug', 'Почему я выбрал Pug', '14 октября 2016']
             ]
 
-          each article in articles
-            li.nav__item
+          each article, index in articles
+            li.nav__item(class=`${index==0 ? 'nav__item--active': ''}`)
               a.nav__link(href=`#${article[0]}`)= article[1]
 
     .blog__main
