@@ -2,10 +2,10 @@ extends ../auth.layout.pug
 
 block content
   .auth-block
-    button.auth-button Авторизоваться
+    button.auth-button#auth-button Авторизоваться
 
   .welcome-wrapper
-    .welcome-turner.welcome-turner--welcome.welcome-turner--login
+    #welcome-turner.welcome-turner.welcome-turner--welcome.welcome-turner--login
       .welcome
         include ../common/user
 
@@ -58,6 +58,6 @@ block content
         nav.bottom-nav
           ul.bottom-nav__list
             li.bottom-nav__item.bottom-nav__item--main
-              a(class="bottom-nav__link" href="") На главную
+              a(class="bottom-nav__link" id="nav-to-main" href="") На главную
             li.bottom-nav__item.bottom-nav__item--enter
               a(class="bottom-nav__link" href="" type="submit") Войти

@@ -1,10 +1,6 @@
 .login {
   transform: rotateY(180deg);
-  transition: 0.6s;
-  &.rotate {
-    transform: none;
-    transition: 0.6s;
-  }
+  transition: 0.8s;
   width: 380px !important;
   height: 407px !important;
   padding-top: 29px !important;
