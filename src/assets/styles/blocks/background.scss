@@ -1,12 +1,10 @@
-// body {
-//   overflow: hidden;
+// #background-container {
+//   width: 100%;
+//   height: 100%;
 // }
 
 .background {
   // background: #223b65;
-  background: transparent;
-  // width: 100vw;
-  // height: 100vh;
 
   &__img {
     width: 100vw;
@@ -14,17 +12,19 @@
     
     bottom: 0;
 
-    @media screen and (min-width: 1800px) {
+    @media screen and (min-width: $desktop-width) {
       bottom: -160px;
     }
     
-    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+    @media screen and (min-width: $laptop-width) and (max-width: 1799px) {
       bottom: -40px;
     }
   }
 
   &__video {
-    // object-fit: fill;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
     z-index: -1;
     position: fixed;
     left: 0;

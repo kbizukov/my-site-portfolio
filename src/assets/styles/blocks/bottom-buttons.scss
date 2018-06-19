@@ -27,23 +27,31 @@ $borderColor: rgba(114, 149, 211, 1);
     }
     
     &--works {
-      width: 156px;
+      width: 41%;
     }
   
     &--about {
-      width: 126px;
+      width: 33.16%;
     }
   
     &--blog {
-      width: 98px;
+      width: 25.8%;
     }
   
     &--main {
-      width: 50%;
+      width: 55.67%;
+
+      @media screen and (min-width: $mobile-width) {
+        width: 50%;
+      }
     }
   
     &--enter {
-      width: 50%;
+      width: 44.33%;
+      
+      @media screen and (min-width: $mobile-width) {
+        width: 50%;
+      }
       [type="submit"] {
 
         &:hover {

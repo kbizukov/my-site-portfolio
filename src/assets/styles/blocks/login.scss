@@ -1,15 +1,22 @@
 .login {
   transform: rotateY(180deg);
-  transition: 0.8s;
-  width: 380px !important;
   height: 407px !important;
-  padding-top: 29px !important;
+  padding-top: 34px!important;
+
+  @media screen and (min-width: 769px) {
+    padding-top: 29px !important;
+  }
 
   &__title {
     text-transform: uppercase;
     font-family: 'Sansus Webissimo';
-    font-size: 35px;
-    margin-bottom: 29px;
+    font-size: 30px;
+    margin-bottom: 31px;
+
+    @media screen and (min-width: 769px) {
+      font-size: 35px;
+      margin-bottom: 29px;
+    }
   }
 
   &__inputs {
@@ -45,12 +52,11 @@
         color: #373e42;
         padding: 0 19px;
         outline: none;
-        ::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder, ::placeholder {
+        &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder, &::placeholder {
           color: #373e42;
           opacity: .5;
         }
         border: none;
-        font-size: 16px;
         font-family: 'Roboto';
         width: calc(100% - 45px);
       }

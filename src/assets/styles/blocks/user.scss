@@ -4,6 +4,11 @@
     margin: auto;
     width: 141px;
     height: 141px;
+    margin-bottom: 24px;
+
+    @media screen and (min-width: $mobile-width) {
+      margin-bottom: 0;
+    }
   }
 
   &__description {
@@ -15,8 +20,13 @@
     @include roboto-medium;
     margin-top: 11px;
     margin-bottom: 3px;
-    font-size: 28px;
-    line-height: 41px;
+    font-size: 21px;
+    line-height: 28px;
+
+    @media screen and (min-width: $mobile-width) {
+      font-size: 28px;
+      line-height: 41px;
+    }
   }
 
   &__info {

@@ -6,7 +6,7 @@ script(type="text/x-template")#skills-list
       )
 
 
-script(type="text/template")#skills-row
+script(type="text/x-template")#skills-row
   .skills-list__item.skills-row
     h3.skills-row__title {{skill.skillGroup}}
     ul.skills-row__list
@@ -16,7 +16,7 @@ script(type="text/template")#skills-row
           :skillPercents="skillPercents"
         )
 
-script(type="text/template")#skill
+script(type="text/x-template")#skill
   .skills-row__item
     figure.skill(:data-percents="skill[1]")
       svg(viewBox="0 0 100 100" preserveAspectRation="none").skill__figure

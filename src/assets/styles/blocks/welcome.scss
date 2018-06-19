@@ -1,15 +1,5 @@
-.auth-block {
-  width: 180px;
-  position: absolute;
-  top: 24px;
-  height: 45px;
-  
-  @media screen and (min-width: 1800px) {
-    right: 100px;
-  }
-  @media screen and (min-width: 1200px) and (max-width: 1799px) {
-    right: 20px;
-  }
+body.welcome--no-overflow {
+  overflow: hidden;
 }
 
 .welcome-wrapper {
@@ -17,13 +7,35 @@
   height: 100vh;
   z-index: 1;
 
+  background: url('./assets/images/welcome-bg-iphone.jpg') no-repeat;
+  background-size: cover;
+
+  @media screen and (min-width: 425px){
+    background: url('./assets/images/welcome-bg-ipad.jpg') no-repeat;
+    background-size: cover;
+    background-position-y: center;
+  }
+
+  @include laptops {
+    background: none;
+  }
+
   .welcome-turner {
-    width: 380px;
+    width: 95%;
     position: relative;
     margin: auto;
     z-index: 1;
     transform-style: preserve-3d;
-    transition: 0.8s;
+    transition: transform 0.8s;
+
+    
+    @include laptops {
+      width: 380px;
+    }
+
+    @media screen and (min-width: $mobile-width) and (max-width: 1199px) {
+      width: 348px;
+    }
 
     &--welcome {
       height: 404px;
@@ -35,13 +47,11 @@
 
     &.rotate {
       transform: rotateY(180deg);
-      transition: 0.8s;
     }
   }
 
   .welcome {
     transform: rotateY(0deg);
-    transition: 0.8s;
 
     .user__name {
       margin-top: 10px;
@@ -53,7 +63,7 @@
     position: absolute;
     backface-visibility: hidden;
     height: 395px;
-    width: 380px;
+    width: 100%;
     background: rgba(28, 31, 41, 0.5);
     padding-top: 40px;
     color: #fff;

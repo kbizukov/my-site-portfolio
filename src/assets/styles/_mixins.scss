@@ -6,3 +6,39 @@
   font-family: 'Roboto', Helvetica, sans-serif;
   font-weight: 500;
 }
+
+@mixin optional-at-root($sel) {
+  @at-root #{if(not &, $sel, selector-append(&, $sel))} {
+    @content;
+  }
+}
+
+@mixin placeholder {
+  @include optional-at-root("::-webkit-input-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root("::-moz-placeholder") {
+    @content;
+  }
+
+  @include optional-at-root(":-ms-input-placeholder") {
+    @content;
+  }
+}
+
+@mixin tablets {
+  @media screen and (max-width: $tablets-width) {
+    @content;
+  }
+}
+
+@mixin laptops {
+  @media screen and (min-width: $laptop-width){
+    @content;
+  }
+}

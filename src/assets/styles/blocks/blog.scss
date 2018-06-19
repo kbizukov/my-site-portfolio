@@ -13,7 +13,7 @@
   &__nav {
     display: none;
 
-    @media screen and (min-width: 1800px) {
+    @media screen and (min-width: $desktop-width) {
       width: 28%;
       display: block;
       // margin-right: 117px;
@@ -22,7 +22,7 @@
       justify-content: center;
     }
 
-    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+    @media screen and (min-width: $laptop-width) and (max-width: 1799px) {
       width: 25%;
       display: block;
       margin-right: 77px;
@@ -39,11 +39,11 @@
   &__main {
     width: 100%;
 
-    @media screen and (min-width: 1800px) {
+    @media screen and (min-width: $desktop-width) {
       width: 70%;
     }
 
-    @media screen and (min-width: 1200px) and (max-width: 1799px) {
+    @media screen and (min-width: $laptop-width) and (max-width: 1799px) {
       width: 75%;
     }
   }
@@ -53,11 +53,11 @@
     margin: 0 20px;
 
     
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: $tablets-width) {
       margin: auto;
     }
 
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: $laptop-width) {
       margin: 0 4px;
     }
 

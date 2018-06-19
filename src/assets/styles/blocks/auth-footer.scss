@@ -1,12 +1,28 @@
 .auth-footer {
-  width: 446px;
   position: relative;
   bottom: 58px;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  text-align: center;
   
   .auth-footer__text {
     color: #fff;
     @include roboto-light;
-    font-size: 16px;
+
+    .auth-footer__dev-name {
+      display: block;
+
+      @media screen and (min-width: 445px) {
+        display: inline;
+      }
+    }
+
+    .auth-footer__divider {
+      visibility: hidden;
+
+      @media screen and (min-width: 445px) {
+        visibility: visible;
+      }
+    }
   }
 }

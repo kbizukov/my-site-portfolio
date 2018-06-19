@@ -1,6 +1,37 @@
+.auth-block {
+  width: 148px;
+  height: 40px;
+
+  &--welcome {
+    position: absolute;
+    top: 10px;
+    right: calc(50% - 74px);
+    font-size: 14px;
+    transition: all .4s;
+    
+    @media screen and (min-width: $tablets-width) {
+      top: 24px;
+      font-size: 16px;
+    }
+  
+    @media screen and (min-width: $desktop-width) {
+      right: 100px;
+    }
+    
+    @media screen and (min-width: $tablets-width) and (max-width: 1799px) {
+      right: 20px;
+    }
+  }
+  
+  @media screen and (min-width: $tablets-width) {
+    width: 180px;
+    height: 45px;
+  }
+}
+
 .auth-button {
-  width: 180px;
-  height: 45px;
+  width: 100%;
+  height: 100%;
   color: #fff;
   border: 1px solid #fff;
   background: transparent;
@@ -14,5 +45,4 @@
   &--hidden {
     display: none;
   }
-
 }

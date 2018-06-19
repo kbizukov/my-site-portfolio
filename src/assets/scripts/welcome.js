@@ -8,6 +8,8 @@
 
   flipper &&
     DOC.addEventListener("DOMContentLoaded", () => {
+      body.classList.add("welcome--no-overflow");
+
       authButton.addEventListener("click", e => {
         authButton.classList.add("auth-button--hidden");
         flipper.classList.toggle("rotate");
