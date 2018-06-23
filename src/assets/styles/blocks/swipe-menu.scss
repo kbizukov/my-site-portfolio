@@ -1,0 +1,64 @@
+.swipe-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  text-align: right;
+  padding: 17px;
+  width: 284px;
+  height: 100vh;
+  background: #253468;
+  z-index: 7;
+  position: fixed;
+  transition: left .6s;
+  
+  @include laptops {
+    display: none;
+  }
+
+  &--closed {
+    left: -284px;
+  }
+
+  &--opened {
+    box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    left: 0;
+  }
+
+  .swipe-nav {
+    z-index: 8;
+  }
+
+  .swipe-nav__list {
+    list-style: none;
+    padding-top: 40px;
+  }
+
+  .swipe-nav__item {
+    padding-bottom: 40px;
+  }
+
+  .swipe-nav__link {
+    font-size: 16px;
+    line-height: 26px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+
+    &--active {
+      font-weight: 700;
+      color: #fff;
+    }
+  }
+  
+  .swipe-touch {
+    // box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    background: #253468;
+    position: absolute;
+    right: -9px;
+    top: calc(50% - 27px);
+    width: 54px;
+    height: 54px;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    z-index: 7;
+  }
+}

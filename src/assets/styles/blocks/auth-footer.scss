@@ -4,25 +4,25 @@
   display: flex;
   justify-content: center;
   text-align: center;
+}
   
-  .auth-footer__text {
-    color: #fff;
-    @include roboto-light;
+.auth-footer__text {
+  color: #fff;
+  @include roboto-light;
+}
 
-    .auth-footer__dev-name {
-      display: block;
+.auth-footer__dev-name {
+  display: block;
 
-      @media screen and (min-width: 445px) {
-        display: inline;
-      }
-    }
+  @media screen and (min-width: 445px) {
+    display: inline;
+  }
+}
 
-    .auth-footer__divider {
-      visibility: hidden;
+.auth-footer__divider {
+  visibility: hidden;
 
-      @media screen and (min-width: 445px) {
-        visibility: visible;
-      }
-    }
+  @media screen and (min-width: 445px) {
+    visibility: visible;
   }
 }

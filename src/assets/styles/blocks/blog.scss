@@ -7,16 +7,28 @@
 .blog {
   display: flex;
   background: $triangle-blog;
-  padding-top: 75px;
+  padding: 30px 10px 0;
   justify-content: flex-start;
+
+
+  @include tablets {
+    padding: 48px 24px 0;
+  }
+
+  @include laptops {
+    padding: 101px 10px 0;
+  }
+
+  @include desktops {
+    padding: 61px 10px 0;
+  }
 
   &__nav {
     display: none;
 
     @media screen and (min-width: $desktop-width) {
       width: 28%;
-      display: block;
-      // margin-right: 117px;
+      margin-right: -5px;
       text-align: right;
       display: flex;
       justify-content: center;
@@ -24,11 +36,11 @@
 
     @media screen and (min-width: $laptop-width) and (max-width: 1799px) {
       width: 25%;
-      display: block;
-      margin-right: 77px;
+      margin-right: 95px;
       text-align: right;
       display: flex;
       justify-content: flex-end;
+      margin-left: 20px;
     }
 
     .nav__link {
@@ -52,25 +64,71 @@
     max-width: 880px;
     margin: 0 20px;
 
+    @include tablets-max {
+      margin: auto;
+    }
     
-    @media screen and (min-width: $tablets-width) {
+    @include tablets {
       margin: auto;
     }
 
-    @media screen and (min-width: $laptop-width) {
+    @media screen and (max-width: 1370px) {
+      max-width: 845px;
+    }
+
+    @media screen and (max-width: 1300px) {
+      max-width: 780px;
+    }
+
+    @include laptops {
       margin: 0 4px;
+      margin-right: 20px;
     }
 
     .blog__article {
       &:not(:first-child) {
-        margin-top: 76px;
+        margin-top: 24px;
       }
-      margin-bottom: 62px;
+      margin-bottom: 19px;
+
+      &:last-child {
+        margin-bottom: 22px;
+      }
+
+      @include tablets {
+        &:not(:first-child) {
+          margin-top: 42px;
+        }
+        margin-bottom: 42px;
+      }
+
+      @include laptops {
+        &:not(:first-child) {
+          margin-top: 62px;
+        }
+        margin-bottom: 62px;
+      }
+
+      // @include desktops {
+      //   &:not(:first-child) {
+      //     margin-top: 62px;
+      //   }
+      //   margin-bottom: 62px;
+
+      //   &:last-child {
+      //     margin-bottom: 60px;
+      //   }
+      // }
     }
   }
 
   .article-divider:not(:last-child) {
-    height: 5px;
+    height: 4px;
+
+    @include tablets {
+      height: 5px;
+    }
+
     margin-right: 1px;
     background: rgba(55, 62, 66, 0.07);
   }

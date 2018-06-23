@@ -66,11 +66,6 @@
   }
 }
 
-// @mixin tablets {
-//   @media screen and (max-width: 768px) {
-//     @content;
-//   }
-// }
 
 // .slider {
 //   height: 100vh;
@@ -82,7 +77,7 @@
 //     "info buttons" 30%
 //     / 1fr 1fr;
 
-//   @include tablets {
+//   @include tablets-max {
 //     grid-template: 
 //     "display" 400px
 //     "info" 300px

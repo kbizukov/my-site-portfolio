@@ -4,7 +4,20 @@
   position: relative;
 
   &:not(&--works) {
-    background: url(assets/images/about-header-1800.jpg) no-repeat;
+    background: url(assets/images/bg-phone.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @media screen and (min-width: 426px) {
+      background: url(assets/images/bg-tablet.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+    @include laptops {
+      background: url(assets/images/about-header-1800.jpg) no-repeat;
+      background-size: cover;
+      // background-position: center;
+    }
     background-size: cover;
     z-index: 0;
   }
@@ -18,14 +31,20 @@
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
     position: absolute;
-    top: 28px;
+    top: 10px;
+
+    @media screen and (min-width: 425px) {
+      padding-left: 30px;
+      padding-right: 30px;
+      top: 28px;
+    }
   }
 
   &__links {
-    width: 140px;
+    z-index: 3;
 
     .socials__icon {
       fill: #fff;
@@ -37,13 +56,19 @@
   }
 
   &__menu {
-    width: 40px;
-    right: 30px;
+    width: 27px;
+    right: 20px;
+    z-index: 5;
+
+    @media screen and (min-width: 425px) {
+      width: 40px;
+      right: 30px;
+    }
   }
 
   &__title {
     display: flex;
-    width: 460px;
+    // width: 460px;
     height: 460px;
     // height: calc(100vh - 157px);
     margin: auto;
@@ -51,7 +76,15 @@
     position: relative;
 
     &--blog {
-      height: calc(100vh - -9px);
+      height: calc(100vh - 107px);
+
+      @include tablets {
+        height: calc(100vh - 49px);
+      }
+
+      @include laptops {
+        height: calc(100vh - -9px);
+      }
     }
 
     &--works, &--about {
@@ -65,12 +98,23 @@
       line-height: 1.33;
     }
 
-    .hero__title-svg-cntainer {
-      width: 459px;
-      height: 271px;
+    .hero__title-svg-container {
+      width: 281px;
+      height: 169px;
       position: absolute;
-      top: calc(50% - 145px);
-      left: calc(50% - 253px);
+      top: calc(50% - 130.5px);
+      left: calc(50% - 145px);
+
+      @include tablets {
+        left: calc(50% - 147px);
+      }
+
+      @media screen and (min-width: 1040px) {
+        width: 459px;
+        height: 271px;
+        top: calc(50% - 145px);
+        left: calc(50% - 253px);
+      }
 
       &--works {
         top: calc(50% - 147px);
@@ -91,6 +135,19 @@
 
     .hero__description {
       margin-top: 11px;
+      position: relative;
+
+      @include tablets-max {
+        top: -5px;
+      }
+
+      @include tablets {
+        top: 4px;
+      }
+      
+      @include laptops {
+        top: 0;
+      }
     }
 
     &--blog {
@@ -124,6 +181,14 @@
 
     &--about {
       bottom: 88px;
+    }
+    
+    &--blog {
+      display: none;
+      @media screen and (min-width: 426px) and (max-width: 1039px){
+        display: block;
+        bottom: 48px;
+      }
     }
   }
 

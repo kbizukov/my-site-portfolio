@@ -26,7 +26,11 @@
 
   &--blog {
     position: relative;
-    top: -6px;
+    top: 8px;
+
+    @include desktops {
+      margin-right: 15px;
+    }
 
     .nav__item {
       padding: 9px 17px 7px 12px ;

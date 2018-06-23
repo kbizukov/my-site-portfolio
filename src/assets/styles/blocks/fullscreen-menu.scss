@@ -1,12 +1,25 @@
 .fullscreen-menu {
-  display: none;
+  // display: none;
   position: fixed;
   top: 0;
   width: 100%;
-  max-width: 1800px;
   height: 100vh;
-  background: rgba(24, 54, 105, .87);
-  z-index: 3;
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+
+  &--opened {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    width: 100%;
+    height: 100%;
+    
+    opacity: 1;
+    visibility: visible;
+    transition: all .6s;
+    transition-delay: 1.1s;
+  }
 
   .fullscreen-nav {
     width: 100%;
@@ -27,10 +40,19 @@
     }
     
     .fullscreen-menu__link {
+      font-size: 35px;
+
+      @include tablets {
+        font-size: 49px;
+      }
+
+      @include laptops {
+        font-size: 63px;
+      }
+
       padding-bottom: 11px;
       font-family: 'Sansus Webissimo';
       text-align: center;
-      font-size: 63px;
       text-transform: uppercase;
       width: 100%;
       height: 100%;
@@ -50,6 +72,48 @@
           border-bottom: 3px solid #fff;
         }
       }
+    }
+  }
+}
+
+.fullscreen-menu-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-100%);
+  transition-delay: 1s;
+  z-index: 4;
+  height: 100vh;
+  width: 100%;
+
+  .left, .right {
+    position: relative;
+    background: rgba(24, 54, 105, .87);
+    height: 100%;
+    transition: all 1s;
+    width: 50%;
+  }
+
+  .left {
+    left: -50%;
+  }
+  .right {
+    right: -50%;
+  }
+
+  &--opened {
+    transform: translateY(0%);
+    transition-delay: 0s;
+
+    .left {
+      left: 0%;
+    }
+    .right {
+      right: 0%;
     }
   }
 }

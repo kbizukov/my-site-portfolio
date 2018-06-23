@@ -5,12 +5,9 @@ mixin icon(iconName, iconClass)
 mixin image(imagePath, imageAlt, imageClass)
   img(src=`./assets/images/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
 
-mixin socials(socials, modClass)
-  ul.socials(class=`${modClass}`)
-    each item in socials
-      li.socials__item
-        a(href=`${item[0]}`).socials__link
-          +icon(item[1], 'socials__link-icon')
+mixin socials(modClass)
+  .socials(class=`${(modClass) ? 'socials--'+modClass : ''}`)
+    include ./socials
 
 mixin header-svg(modClass, color)
   .header-svg(class=`header-svg${modClass}`)

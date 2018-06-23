@@ -7,16 +7,18 @@ block scripts
   script(src='about.bundle.js')
 
 block content
+  include ../common/menu
+  
   section.hero
     .hero__top
       .hero__links
-        include ../common/socials
+        +socials('--header')
     
       .hero__menu
         +hamburger('')
 
     .hero__title.hero__title--about
-      .hero__title-svg-cntainer
+      .hero__title-svg-container
         include ../common/hero_title_svg
 
       .hero__user.hero__user--about

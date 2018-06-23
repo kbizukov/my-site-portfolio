@@ -9,12 +9,12 @@
     font-size: 14px;
     transition: all .4s;
     
-    @media screen and (min-width: $tablets-width) {
+    @include tablets {
       top: 24px;
       font-size: 16px;
     }
-  
-    @media screen and (min-width: $desktop-width) {
+
+    @include desktops {
       right: 100px;
     }
     
@@ -23,7 +23,7 @@
     }
   }
   
-  @media screen and (min-width: $tablets-width) {
+  @include tablets {
     width: 180px;
     height: 45px;
   }

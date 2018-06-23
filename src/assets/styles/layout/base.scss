@@ -10,7 +10,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media screen and (min-width: $mobile-width) {
+  @media screen and (min-width: $laptop-width) {
     font-size: 16px;
   }
 }

@@ -19,4 +19,23 @@
       fill: $light-blue;
     }
   }
+  
+  &--header {
+    width: 129px;
+    
+    .socials__icon {
+      width: 25px;
+      height: 17px;
+    }
+
+    @media screen and (min-width: 425px) {
+      width: 140px;
+
+      .socials__icon {
+        width: 30px;
+        height: 22px;
+      }
+    }
+
+  }
 }

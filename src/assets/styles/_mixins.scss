@@ -31,14 +31,44 @@
   }
 }
 
+@mixin mobiles {
+  @media screen and (min-width: $mobile-width) {
+    @content;
+  }
+}
+
 @mixin tablets {
-  @media screen and (max-width: $tablets-width) {
+  @media screen and (min-width: $tablets-width) {
+    @content;
+  }
+}
+
+@mixin tablets-max {
+  @media screen and (max-width: $tablets-width-max) {
     @content;
   }
 }
 
 @mixin laptops {
-  @media screen and (min-width: $laptop-width){
+  @media screen and (min-width: $laptop-width) {
+    @content;
+  }
+}
+
+@mixin desktops {
+  @media screen and (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+@mixin footer-laptops {
+  @media screen and (min-width: $footer-laptops) {
+    @content;
+  }
+}
+
+@mixin footer-laptops-max {
+  @media screen and (max-width: $footer-laptops-max) {
     @content;
   }
 }

@@ -6,7 +6,7 @@
     height: 141px;
     margin-bottom: 24px;
 
-    @media screen and (min-width: $mobile-width) {
+    @include tablets {
       margin-bottom: 0;
     }
   }
@@ -31,5 +31,18 @@
 
   &__info {
     line-height: 24px;
+    position: relative;
+
+    @include tablets-max {
+      top: 4px;
+    }
+
+    @include tablets {
+      top: -1px;
+    }
+
+    @include laptops {
+      top: 0;
+    }
   }
 }

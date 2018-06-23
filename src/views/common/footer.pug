@@ -1,22 +1,22 @@
 footer.footer
     .footer__top
-      .footer__col
+      .footer__col.footer__col--first
         .footer__text.footer__description
           p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
       
-      .footer__divider
+      .footer__divider.footer__divider--first
 
-      .footer__col
+      .footer__col.footer__col--second
         .footer__row
           +menu('menu--footer')
 
           .footer__row
             .footer__socials
-              include ../common/socials
+              +socials('')
 
-      .footer__divider
+      .footer__divider.footer__divider--second
           
-      .footer__col
+      .footer__col.footer__col--third
         .footer-contacts
           address.footer-contacts__data
             ul.footer-contacts__list
@@ -33,4 +33,4 @@ footer.footer
     
     .footer__bottom
       .footer__row
-        h2.footer__text &copy; Кирилл Бизюков | создано с любовью в LoftSchool | 2018
+        h2.footer__text #[span.auth-footer__dev-name &copy; Кирилл Бизюков] #[span.auth-footer__divider | ]Cоздано с любовью в LoftSchool | 2018

@@ -7,6 +7,42 @@
     margin-bottom: 25px;
     margin-top: -1px;
     margin-left: 1px;
+
+    @include footer-laptops-max {
+      margin-bottom: 15px;
+    }
+
+    @include tablets-max {
+      margin-bottom: 16px;
+    }
+
+    .menu__list {
+      display: flex;
+      justify-content: space-between;
+
+      @media screen and (min-width: 930px) {
+        margin-right: 8.5%;
+        justify-content: flex-start;
+      }
+
+      @include footer-laptops-max {
+        font-size: 14px;
+      }
+
+      @media screen and (min-width: 426px) and (max-width: 768px) {
+        justify-content: space-around;
+      }
+    }
+
+    .menu__item {
+      &:not(:last-child) {
+        margin-right: 0;
+
+        @media screen and (min-width: 890px) {
+          margin-right: 8.5%;
+        }
+      }
+    }
   }
 
   &__list {

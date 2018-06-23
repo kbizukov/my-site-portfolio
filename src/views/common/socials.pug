@@ -1,26 +1,25 @@
-.socials
-  - 
-    var links = [
-      {
-        iconName: 'vk',
-        link: 'https://vk.com/id18512732',
-        target: '_blank'
-      },
-      {
-        iconName: 'github',
-        link: 'https://github.com/kbizukov',
-        target: '_blank'
-      },
-      {
-        iconName: 'in',
-        link: 'https://linkedin.com',
-        target: '_blank'
-      }
-    ]
+- 
+  var links = [
+    {
+      iconName: 'vk',
+      link: 'https://vk.com/id18512732',
+      target: '_blank'
+    },
+    {
+      iconName: 'github',
+      link: 'https://github.com/kbizukov',
+      target: '_blank'
+    },
+    {
+      iconName: 'in',
+      link: 'https://linkedin.com',
+      target: '_blank'
+    }
+  ]
 
-  ul.socials__list
-    each link in links
-      li.socials__item
-        - var target = link.target || '_self'
-        a(class="socials__link" href=`${link.link}` target=`${target}`)
-          +icon(`${link.iconName}`, 'socials__icon')
+ul.socials__list
+  each link in links
+    li.socials__item
+      - var target = link.target || '_self'
+      a(class="socials__link" href=`${link.link}` target=`${target}`)
+        +icon(`${link.iconName}`, 'socials__icon')

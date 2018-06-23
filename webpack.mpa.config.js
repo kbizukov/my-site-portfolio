@@ -33,6 +33,10 @@ module.exports = {
     new UglifyJsPlugin(),
     new webpack.optimize.CommonsChunkPlugin({
       name: ["vendor", "bootloader"]
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     })
   ],
   resolve: {

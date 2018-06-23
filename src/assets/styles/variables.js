@@ -10,6 +10,9 @@ module.exports = {
   "arrow-down-hover": "#fff",
   "desktop-width": "1800px",
   "laptop-width": "1200px",
+  "tablets-width-max": "767px",
   "tablets-width": "768px",
-  "mobile-width": "375px"
+  "mobile-width": "375px",
+  "footer-laptops-max": "1164px",
+  "footer-laptops": "1165px"
 };

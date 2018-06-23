@@ -18,7 +18,6 @@ new Vue({
         this.allowed = true;
       } else {
         this.allowed = false;
-        console.log("this.allowed", this.allowed);
       }
     }
   },

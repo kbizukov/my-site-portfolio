@@ -7,25 +7,117 @@
 }
 
 .footer {
-  height: 185px;
+  min-height: 185px;
   width: 100%;
 
+  @include footer-laptops-max {
+    min-height: 229px;
+  }
+
   &__top {
-    height: 147px;
-    padding-top: 27px;
+    min-height: 147px;
     background: rgba(28, 31, 41, 0.85);
     display: flex;
+    flex-flow: row wrap;
+
+    @include footer-laptops {
+      flex-flow: row no-wrap;
+      padding-top: 27px;
+    }
+
+    @include footer-laptops-max {
+      padding: 23px 24px 0;
+      min-height: 192px;
+    }
+
+    @include tablets-max {
+      width: 100%;
+      padding: 14px 10px 0;
+
+      @media screen and (min-width: 425px) {
+        padding: 15px 10px 0;
+      }
+    }
   }
 
   &__col {
-    width: 33.3%;
-    padding-left: 29px;
+    padding-left: 2.41%;
+    flex: 1 100%;
+
+    @include footer-laptops {
+      &--first {
+        flex: 0 34.8%;
+      }
+      
+      &--second {
+        flex: 0 38.9%;
+      }
+      &--third {
+        flex: 0 26.2%;
+      }
+    }
+
+    @include desktops {
+      width: 33.3%;
+      flex: 1 0px;
+    }
+
+    @include footer-laptops-max {
+      &--first {
+        padding: 0;
+        min-height: 34px;
+      }
+
+      &--second, &--third {
+        padding: 0;
+        width: 50%;
+        flex: 1 auto;
+        min-height: 114px;
+      }
+    }
+
+    @include tablets-max {
+      width: 100%;
+      min-height: auto;
+      padding-bottom: 12px;
+
+      &--first {
+        padding-right: 15px;
+        padding-left: 15px;
+      }
+    }
   }
 
   &__divider {
     border-left: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 3px;
     height: 87px;
+
+    @include footer-laptops-max {
+      &--first {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: none;
+        height: 1px;
+        width: 100%;
+        margin-bottom: 17px;
+      }
+      &--second {
+        display: none;
+      }
+    }
+    
+    @include tablets-max {
+      margin-top: 0;
+
+      &--second {
+        display: block;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        border-left: none;
+        height: 1px;
+        width: 100%;
+        margin-bottom: 18px;
+      }
+    }
   }
 
   .footer__description {
@@ -33,11 +125,23 @@
     max-width: 350px;
     margin-top: -2px;
     margin-left: 1px;
+
+    @include footer-laptops-max {
+      max-width: 100%;
+      text-align: center;
+      width: 100%;
+      margin: auto;
+    }
   }
 
   .footer__socials {
     max-width: 140px;
     margin-left: 4px;
+
+    @include tablets-max {
+      justify-content: center;
+      max-width: 100%;
+    }
 
     .socials__icon {
       fill: rgba(255, 255, 255, 0.5);
@@ -45,38 +149,70 @@
       &:hover {
         fill: #004cd1;
       }
+
+      @include tablets-max {
+        &:hover {
+          fill: #fff;
+        }
+      }
     }
   }
 
   &__text {
-    font-size: 16px;
+    font-size: 14px;
     color: #fff;
     @include roboto-light;
+
+    @include footer-laptops {
+      font-size: 16px;
+    }
   }
 
   &__bottom {
     background: rgba($blue, .85);
+    text-align: center;
+    min-height: 38px;
+    line-height: 24px;
+
+    @include footer-laptops-max {
+      min-height: 37px;
+      background: rgba(45, 72, 206, .85);
+    }
+
+    .footer__row {
+      padding-top: 6px;
+      font-size: 15.98px;
+
+      @include tablets-max {
+        padding: 6px 0;
+      }
+    }
+    
   }
 
   .footer-contacts {
     margin-top: -3px;
+    
+    @include footer-laptops-max {
+      margin-top: -4px;
+      text-align: right;
+    }
+    
+    @include tablets-max {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   .footer-contacts__data {
     font-style: normal;
 
     .footer-contacts__list {
-      line-height: 26px;
-    }
-  }
+      line-height: 24px;
 
-  .footer__bottom {
-    text-align: center;
-    height: 38px;
-
-    .footer__row {
-      padding-top: 6px;
-      font-size: 15.98px;
+      @include footer-laptops {
+        line-height: 26px;
+      }
     }
   }
 }

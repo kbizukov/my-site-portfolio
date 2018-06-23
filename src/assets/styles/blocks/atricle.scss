@@ -1,21 +1,41 @@
 .article {
   &__header {
     position: relative;
-    top: -8px;
   }
 
   &__date {
     color: rgba(8, 60, 150, 0.7);
-    margin-bottom: 18px;
     margin-left: 1px;
+    font-size: 14px;
+    line-height: 24px;
+    margin-top: -6px;
+    margin-bottom: 5px;
+
+    @include tablets {
+      margin-top: -4px;
+      margin-bottom: 4px;
+    }
+
+    @include laptops {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
   }
   
   &__text {
-    line-height: 26px;
-    margin-left: 1px;
+    line-height: 24px;
+    
+    @include laptops {
+      line-height: 26px;
+      margin-left: 1px;
+    }
     
     p {
       margin-bottom: 9px;
+
+      @include tablets-max {
+        margin-bottom: 10px;
+      }
     }
   }
 }
