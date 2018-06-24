@@ -85,7 +85,19 @@
       }
     }
 
-    &--works, &--about {
+    &--works {
+      height: calc(100vh - 61px);
+
+      @include tablets {
+        height: calc(100vh - 61px);
+      }
+
+      @include laptops {
+        height: calc(100vh - 91px);
+      }
+    }
+
+    &--about {
       height: calc(100vh - 91px);
 
       @include about-laptops-max {
@@ -129,7 +141,15 @@
       }
 
       &--works {
-        top: calc(50% - 147px);
+        top: calc(50% - 127px);
+
+        @include tablets {
+          top: calc(50% - 127px);
+        }
+
+        @include laptops {
+          top: calc(50% - 147px);
+        }
       }
     }
   }
@@ -178,11 +198,41 @@
     }
 
     &--works {
-      height: 221px;
+      height: 269px;
+
+      @include tablets {
+        height: 221px;
+      }
+
+      @include laptops {
+        height: 221px;
+      }
 
       .user__name {
         margin-bottom: 1px;
-        margin-top: 22px;
+        margin-top: 23px;
+
+        @include tablets {
+          margin-bottom: 1px;
+          margin-top: 23px;
+        }
+
+        @include laptops {
+          margin-bottom: 1px;
+          margin-top: 22px;
+        }
+      }
+
+      .user__avatar {
+        margin-bottom: 28px;
+
+        @include tablets {
+          margin-bottom: 24px;
+        }
+
+        @include laptops {
+          margin-bottom: 27px;
+        }
       }
     }
 
@@ -236,6 +286,18 @@
 
       @include about-laptops-max {
         bottom: 82px;
+      }
+    }
+
+    &--works {
+      bottom: 55px;
+      
+      @include tablets {
+        bottom: 55px;
+      }
+
+      @include laptops {
+        bottom: 89px;
       }
     }
     

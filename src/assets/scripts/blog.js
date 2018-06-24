@@ -1,3 +1,5 @@
+import "./modules/fullscreen-menu";
+
 // import Vue from "vue";
 
 // new Vue({
@@ -22,10 +24,6 @@ $(function() {
   const wrapper = $(".wrapper")[0];
   const $swipeTouch = $(".swipe-touch");
   const $swipeMenu = $(".swipe-menu");
-  const $hamburger = $(".hamburger");
-  const $fullscreenMenu = $(".fullscreen-menu");
-  const $fullscreenMenuBg = $(".fullscreen-menu-bg");
-  const $fullscreenMenuLink = $(".fullscreen-menu__link");
   const $body = $("body");
 
   let activeArticleId = null;
@@ -139,19 +137,5 @@ $(function() {
     if ($swipeMenu.hasClass("swipe-menu--opened")) {
       $swipeMenu.removeClass("swipe-menu--opened");
     }
-  });
-
-  /** fullscreen menu **/
-
-  $hamburger.on("click", e => {
-    $hamburger.toggleClass("hamburger--close-btn");
-    $fullscreenMenu.toggleClass("fullscreen-menu--opened");
-    $fullscreenMenuBg.toggleClass("fullscreen-menu-bg--opened");
-  });
-
-  $fullscreenMenu.on("click", e => {
-    let target = $(e.target);
-    if (target.is($fullscreenMenuLink)) return;
-    $hamburger.trigger("click");
   });
 });

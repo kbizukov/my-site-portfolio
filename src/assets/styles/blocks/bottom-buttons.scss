@@ -3,6 +3,10 @@ $borderColor: rgba(114, 149, 211, 1);
 .bottom-nav {
   width: 100%;
 
+  &--contact-me {
+    font-size: 16px;
+  }
+
   &__item {
     display: inline-block;
     height: 45px;
@@ -59,16 +63,35 @@ $borderColor: rgba(114, 149, 211, 1);
         }
       }
     }
+    
+    &--send, &--clear {
+      .bottom-nav__link {
+        padding-top: 10px;
+        @include from-tablets {
+          padding-top: 12px;
+        }
+      }
+    }
   
     &--send {
       width: 50%;
       border-right: none !important;
+      height: 42px;
+
+      @include from-tablets {
+        height: 45px;
+      }
     }
   
     &--clear {
       width: 50%;
       background: none;
       border-left: none !important;
+      height: 42px;
+
+      @include from-tablets {
+        height: 45px;
+      }
 
       &:hover {
         background: none;

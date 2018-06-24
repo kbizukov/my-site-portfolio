@@ -9,7 +9,7 @@
     font-size: 14px;
     transition: all .4s;
     
-    @include tablets {
+    @include laptops {
       top: 24px;
       font-size: 16px;
     }
@@ -23,7 +23,7 @@
     }
   }
   
-  @include tablets {
+  @include laptops {
     width: 180px;
     height: 45px;
   }

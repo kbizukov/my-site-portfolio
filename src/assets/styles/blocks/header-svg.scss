@@ -1,4 +1,7 @@
 .header-svg {
+  width: 289px;
+  height: 186px;
+  transform: rotate(189deg);
 
   &--about {
     display: none;
@@ -32,11 +35,23 @@
     margin: auto;
     opacity: 0.15;
     position: relative;
-    top: -21px;
-    left: -20px;
+    top: -5px;
+    left: -6px;
+    width: 119px;
+    height: 93px;
+
+    @include tablets {
+      top: -14px;
+      left: -7px;
+      width: 154px;
+      height: 141px;
+    }
+
+    @include laptops {
+      top: -21px;
+      left: -20px;
+      width: 289px;
+      height: 186px;
+    }
   }
-  
-  width: 289px;
-  height: 186px;
-  transform: rotate(189deg);
 }

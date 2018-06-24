@@ -5,31 +5,89 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    width: 780px;
-    margin: auto;
+    margin: 0 10px;
+
+    @include tablets {
+      width: 780px;
+      margin: auto;
+    }
+
+    @include laptops {
+      width: 780px;
+      margin: auto;
+    }
   }
   
   &__item {
     color: #fff;
-    width: 380px;
     text-align: center;
     font-style: italic;
-    margin-bottom: 67px;
-    position: relative;
+    margin-bottom: 35px;
+    width: 100%;
 
-    &:nth-child(2n+1) {
-      margin-right: 20px;
+    @include tablets {
+      margin-bottom: 44px;
+      max-width: 357px;
+
+      &:nth-child(2n+1) {
+        margin-right: 20px;
+      }
+    }
+
+    @include laptops {
+      margin-bottom: 67px;
+      width: 380px;
+
+      &:nth-child(2n+1) {
+        margin-right: 20px;
+      }
+    }
+
+    .mentions__item-container {
+      position: relative;
+      max-width: 380px;
+      margin: 0 auto;
+
+      @include tablets {
+        max-width: 100%;
+      }
+  
+      @include laptops {
+        width: 100%;
+      }
     }
 
     .mentions__bg-pic {
       position: absolute;
-      top: 71px;
+      top: 37px;
       left: 2px;
+      
+      @include tablets {
+        top: 71px;
+      }
+        
+      @include laptops {
+        top: 71px;
+      }
     }
 
     .mentions__icon {
-      margin-bottom: 11px;
-      height: 83px;
+      margin-bottom: 12px;
+      height: 51px;
+        
+      @include tablets {
+        height: 83px;
+        margin-bottom: 11px;
+      }
+        
+      @include laptops {
+        height: 83px;
+        margin-bottom: 11px;
+      }
+
+      &-img {
+        height: 100%;
+      }
     }
 
     .mentions__quote {
@@ -37,12 +95,41 @@
       font-weight: 300;
       width: 100%;
       margin: 0;
-      line-height: 26px;
-      margin-bottom: 18px;
+      line-height: 24px;
+      margin-bottom: 9px;
+
+      @include tablets {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 8px;
+      }
+
+      @include laptops {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 18px;
+        line-height: 26px;
+      }
     }
 
     .mentions__author {
-      margin-bottom: 2px;
+      margin-bottom: 5px;
+
+      @include tablets {
+        margin-bottom: 2px;
+        font-size: 16px;
+      }
+
+      @include laptops {
+        margin-bottom: 2px;
+      }
+    }
+
+    .mentions__description {
+      
+      @include tablets {
+        font-size: 16px;
+      }
     }
   }
 }

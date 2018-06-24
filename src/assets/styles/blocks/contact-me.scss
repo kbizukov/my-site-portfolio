@@ -1,14 +1,36 @@
 .contact-me {
-  width: 380px;
-  height: 459px;
+  width: 300px;
+  height: 422px;
   margin: auto;
-  margin-bottom: 70px;
+  margin-bottom: 38px;
   background: rgba(255, 255, 255, .05);
 
+  @include tablets {
+    margin-bottom: 70px;
+    width: 348px;
+    height: 439px;
+  }
+
+  @include laptops {
+    margin-bottom: 70px;
+    width: 380px;
+    height: 459px;
+  }
+
   &__title {
-    padding-top: 37px;
-    padding-bottom: 30px !important;
+    padding-top: 25px;
+    padding-bottom: 20px !important;
     color: #fff;
+
+    @include tablets {
+      padding-top: 39px;
+      padding-bottom: 21px !important;
+    }
+
+    @include laptops {
+      padding-top: 37px;
+      padding-bottom: 30px !important;
+    }
   }
 
   &__fields {
@@ -22,16 +44,42 @@
     background: rgba(255, 255, 255, .07);
     border: none;
     margin-bottom: 20px;
-    padding: 16px 17px;
+    padding: 16px 19px;
+
+    @include tablets {
+      padding: 16px 19px;
+    }
+
+    @include laptops {
+      padding: 16px 17px;
+    }
   }
 
   &__name, &__email {
-    height: 45px;
+    height: 40px;
+
+    @include tablets {
+      height: 45px;
+    }
+
+    @include laptops {
+      height: 45px;
+    }
   }
 
   &__message {
-    height: 130px;
+    height: 140px;
     resize: none;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
+
+    @include tablets {
+      height: 129px;
+      margin-bottom: 16px;
+    }
+
+    @include laptops {
+      height: 130px;
+      margin-bottom: 14px;
+    }
   }
 }

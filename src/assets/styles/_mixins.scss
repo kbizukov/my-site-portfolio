@@ -43,6 +43,18 @@
   }
 }
 
+@mixin from-tablets {
+  @media screen and (min-width: $tablets-width) {
+    @content;
+  }
+}
+
+@mixin slider-tablets {
+  @media screen and (min-width: 321px) and (max-width: $tablets-width) {
+    @content;
+  }
+}
+
 @mixin tablets-max {
   @media screen and (max-width: $tablets-width-max) {
     @content;

@@ -1,14 +1,18 @@
-import Vue from "vue";
+$(function() {
+  const $hamburger = $(".hamburger");
+  const $fullscreenMenu = $(".fullscreen-menu");
+  const $fullscreenMenuBg = $(".fullscreen-menu-bg");
+  const $fullscreenMenuLink = $(".fullscreen-menu__link");
 
-new Vue({
-  el: "#fullscreen-menu-container",
-  data: {
-    visible: false
-  },
-  methods: {
-    closeHandler() {
-      this.visible = false;
-    }
-  },
-  template: "#fullscreen-menu"
+  $hamburger.on("click", e => {
+    $hamburger.toggleClass("hamburger--close-btn");
+    $fullscreenMenu.toggleClass("fullscreen-menu--opened");
+    $fullscreenMenuBg.toggleClass("fullscreen-menu-bg--opened");
+  });
+
+  $fullscreenMenu.on("click", e => {
+    let target = $(e.target);
+    if (target.is($fullscreenMenuLink)) return;
+    $hamburger.trigger("click");
+  });
 });

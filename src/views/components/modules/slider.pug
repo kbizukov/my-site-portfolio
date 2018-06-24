@@ -16,10 +16,11 @@ script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info
       .slider__info-title
-        .subtitle {{work.title}}
+        h2.block-subtitle.block-subtitle--works.subtitle {{work.title}}
       .slider__info-skills {{work.skills}}
       .slider__info-button
-        a(:href="work.link" target="_blank").button Посмотреть сайт
+        +icon('link', 'slider__info-icon')
+        a(:href="work.link" target="_blank").slider__info-link Посмотреть сайт
 
 script(type="text/x-template")#slider-display
   .slider__display

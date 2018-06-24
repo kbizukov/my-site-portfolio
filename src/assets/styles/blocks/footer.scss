@@ -1,5 +1,6 @@
 .about__footer--over {
   margin-top: -19px;
+
   @include tablets {
     margin-top: -185px;
   }
@@ -9,7 +10,14 @@
 }
 
 .works__footer--over {
-  margin-top: -187px;
+  margin-top: -347px;
+
+  @include tablets {
+    margin-top: -228px;
+  }
+  @include laptops {
+    margin-top: -187px;
+  }
 }
 
 .footer {
