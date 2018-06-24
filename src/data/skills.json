@@ -2,56 +2,31 @@
   {
     "skillsGroup": "Frontend",
     "skills": {
-      "HTML5": {
-        "percents": "75",
-        "opacity": "62.75"
-      },
-      "CSS3": {
-        "percents": "70",
-        "opacity": "75.3"
-      },
-      "JavaScript & jQuery": {
-        "percents": "75",
-        "opacity": "62.75"
-      }
+      "HTML5": 75,
+      "CSS3": 70,
+      "JavaScript & jQuery": 75,
+      "Backbone & Marionette": 75,
+      "Vue.js": 35
     }
   },
   {
     "skillsGroup": "Backend",
     "skills": {
-      "PHP": {
-        "percents": "35",
-        "opacity": "163.15"
-      },
-      "mySQL": {
-        "percents": "50",
-        "opacity": "125.5"
-      },
-      "Node.js & npm": {
-        "percents": "40",
-        "opacity": "150.6"
-      },
-      "Mongo.db": {
-        "percents": "10",
-        "opacity": "225.9"
-      }
+      "PHP": 35,
+      "mySQL": 50,
+      "Node.js & npm": 40,
+      "Mongo.db": 10,
+      "Sails.js": 75
     }
   },
   {
     "skillsGroup": "WorkFlow",
     "skills": {
-      "Git": {
-        "percents": "40",
-        "opacity": "150.6"
-      },
-      "Gulp": {
-        "percents": "50",
-        "opacity": "125.5"
-      },
-      "Bower": {
-        "percents": "70",
-        "opacity": "75.3"
-      }
+      "Git": 40,
+      "Gulp": 60,
+      "Webpack": 35,
+      "Bower": 70,
+      "Yarn": 60
     }
   }
 ]
