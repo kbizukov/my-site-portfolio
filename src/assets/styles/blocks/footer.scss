@@ -1,5 +1,11 @@
 .about__footer--over {
-  margin-top: -185px;
+  margin-top: -19px;
+  @include tablets {
+    margin-top: -185px;
+  }
+  @include laptops {
+    margin-top: -185px;
+  }
 }
 
 .works__footer--over {
@@ -60,6 +66,7 @@
     @include desktops {
       width: 33.3%;
       flex: 1 0px;
+      padding-left: 1.56%;
     }
 
     @include footer-laptops-max {
@@ -138,6 +145,15 @@
     max-width: 140px;
     margin-left: 4px;
 
+    @media screen and (max-width: $footer-laptops-max) {
+      margin-left: 1px;
+    }
+
+    @media screen and (min-width: $footer-laptops) and (max-width: $about-laptops-max) {
+      margin-left: 2px;
+      margin-top: 47px;
+    }
+
     @include tablets-max {
       justify-content: center;
       max-width: 100%;
@@ -176,7 +192,7 @@
 
     @include footer-laptops-max {
       min-height: 37px;
-      background: rgba(45, 72, 206, .85);
+      background: rgba(45, 71, 206, .85);
     }
 
     .footer__row {
@@ -185,6 +201,10 @@
 
       @include tablets-max {
         padding: 6px 0;
+      }
+      
+      @media screen and (min-width: $footer-laptops) and (max-width: $about-laptops-max) {
+        padding: 5px 0;
       }
     }
     
@@ -212,6 +232,10 @@
 
       @include footer-laptops {
         line-height: 26px;
+      }
+
+      @media screen and (min-width: $footer-laptops) and (max-width: $about-laptops-max) {
+        padding-top: 2px;
       }
     }
   }

@@ -1,10 +1,31 @@
 .header-svg {
 
   &--about {
+    display: none;
     position: absolute;
-    top: 24px;
-    left: 70px;
     opacity: 0.1;
+
+    @include tablets {
+      display: block;
+      height: 133px;
+      left: calc(50% - 101.5px);
+      top: 44px;
+      width: 179px;
+    }
+    
+    @include about-laptops-max {
+      display: block;
+      height: 133px;
+      left: calc(50% - 94.5px);
+      width: 179px;
+      top: 60px;
+    }
+
+    @media screen and (min-width: 1651px) {
+      display: block;
+      top: 24px;
+      left: 70px;
+    }
   }
 
   &--works {

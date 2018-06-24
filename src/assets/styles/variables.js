@@ -8,8 +8,10 @@ module.exports = {
   "triangle-works": "rgba(13, 17, 32, 0.85)",
   "arrow-down": "#cac9cc",
   "arrow-down-hover": "#fff",
+
   "desktop-width": "1800px",
   "laptop-width": "1200px",
+  "about-laptops-max": "1650px",
   "tablets-width-max": "767px",
   "tablets-width": "768px",
   "mobile-width": "375px",

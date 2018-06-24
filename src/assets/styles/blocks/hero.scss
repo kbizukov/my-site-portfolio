@@ -34,7 +34,7 @@
     padding-left: 10px;
     padding-right: 10px;
     position: absolute;
-    top: 10px;
+    top: 15px;
 
     @media screen and (min-width: 425px) {
       padding-left: 30px;
@@ -68,9 +68,7 @@
 
   &__title {
     display: flex;
-    // width: 460px;
     height: 460px;
-    // height: calc(100vh - 157px);
     margin: auto;
     align-items: center;
     position: relative;
@@ -89,6 +87,10 @@
 
     &--works, &--about {
       height: calc(100vh - 91px);
+
+      @include about-laptops-max {
+        height: calc(100vh - 87px);
+      }
     }
 
     &-header {
@@ -105,9 +107,19 @@
       top: calc(50% - 130.5px);
       left: calc(50% - 145px);
 
+      &--about {
+        top: calc(50% - 138.5px);
+      }
+
       @include tablets {
         left: calc(50% - 147px);
+
+        &--about {
+          top: calc(50% - 115.5px);
+        }
       }
+
+
 
       @media screen and (min-width: 1040px) {
         width: 459px;
@@ -130,7 +142,18 @@
     justify-content: center;
 
     .user__name {
-      font-size: 35px;
+
+      @include tablets {
+        font-size: 35px;
+      }
+
+      @include laptops {
+        font-size: 35px;
+      }
+
+      @include desktops {
+        font-size: 35px;
+      }
     }
 
     .hero__description {
@@ -164,11 +187,32 @@
     }
 
     &--about {
-      height: 221px;
+      height: 237px;
+
+      @include tablets {
+        height: 190px;
+      }
+
+      @include laptops {
+        height: 221px;
+      }
 
       .user__name {
-        margin-bottom: 1px;
+        margin-bottom: 0;
         margin-top: 23px;
+
+        @include tablets {
+          margin-bottom: 1px;
+        }
+
+        @include laptops {
+          margin-bottom: 1px;
+        }
+
+        @include desktops {
+          margin-bottom: 1px;
+          margin-top: 22px;
+        }
       }
     }
   }
@@ -180,7 +224,19 @@
     left: calc(50% - 12.5px);
 
     &--about {
-      bottom: 88px;
+      bottom: 54px;
+
+      @include tablets {
+        bottom: 56px;
+      }
+
+      @include laptops {
+        bottom: 88px;
+      }
+
+      @include about-laptops-max {
+        bottom: 82px;
+      }
     }
     
     &--blog {

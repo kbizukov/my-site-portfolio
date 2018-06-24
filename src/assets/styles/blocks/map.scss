@@ -1,12 +1,47 @@
 .map {
-  background: url("assets/images/map.jpg");
   width: 100%;
-  height: 1112px;
+
+  @include tablets {
+    background: url("assets/images/map-768.jpg") no-repeat;
+    background-size: cover;
+    height: 867px;
+  }
+
+  @include laptops {
+    background: url("assets/images/map-1200.jpg") no-repeat;
+    background-size: cover;
+    height: 970px;
+  }
+
+  @include desktops {
+    background: url("assets/images/map.jpg") no-repeat;
+    background-size: cover;
+    height: 1112px;
+  }
+
+  .google-map {
+    @media screen and (max-width: $tablets-width-max) {
+      background: url("assets/images/map-320.jpg") no-repeat;
+      background-size: cover;
+      height: 515px;
+    }
+  }
   
   .map__data {
     
     width: 100%;
-    height: 940px;
     display: flex;
+
+    @include tablets {
+      height: 668px;
+    }
+
+    @include laptops {
+      height: 832px;
+    }
+
+    @include desktops {
+      height: 940px;
+    }
   }
 }

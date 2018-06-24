@@ -8,6 +8,10 @@
     margin-top: -1px;
     margin-left: 1px;
 
+    @include about-laptops-max {
+      margin-top: 0;
+    }
+
     @include footer-laptops-max {
       margin-bottom: 15px;
     }
@@ -25,12 +29,21 @@
         justify-content: flex-start;
       }
 
+      @include about-laptops-max {
+        margin-right: 0;
+      }
+
       @include footer-laptops-max {
         font-size: 14px;
       }
 
-      @media screen and (min-width: 426px) and (max-width: 768px) {
-        justify-content: space-around;
+      @media screen and (min-width: 426px) and (max-width: $tablets-width) {
+        width: 342px;
+        margin: auto;
+      }
+
+      @include desktops {
+        margin-right: 17.5%;
       }
     }
 
@@ -40,6 +53,10 @@
 
         @media screen and (min-width: 890px) {
           margin-right: 8.5%;
+        }
+
+        @include about-laptops-max {
+          margin-right: 9.1%;
         }
       }
     }

@@ -6,7 +6,15 @@
   }
   
   &__right_brown {
-    fill: $triangle-brown;
+    fill: $triangle-beige;
+
+    @include about-laptops-max {
+      fill: #f4f5f0;
+    }
+    
+    @media screen and (min-width: 1651px) {
+      fill: $triangle-brown;
+    }
   }
 
   &--blog {

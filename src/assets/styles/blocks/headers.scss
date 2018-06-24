@@ -4,7 +4,6 @@ h1.block-title {
   padding: 70px 0;
   font-size: 35px;
   text-transform: uppercase;
-  // line-height: 56px;
 
   @include tablets {
     font-size: 49px;
@@ -57,10 +56,25 @@ h2.block-subtitle {
       content : "";
       display: block;
       margin: 0 auto;
-      padding-top: 15px; 
+      padding-top: 10px; 
       height: 3px;
-      width: 89px; 
+      width: 56px; 
       border-bottom: 3px solid #98999c;
+
+      @include about-tablets-max {
+        padding-top: 15px; 
+        width: 89px; 
+      }
+
+      @include tablets {
+        padding-top: 15px; 
+        width: 89px; 
+      }
+
+      @include laptops {
+        padding-top: 15px; 
+        width: 89px; 
+      }
     }
   }
 
@@ -73,25 +87,126 @@ h2.block-subtitle {
   }
 
   &--about-left {
-    padding-bottom: 26px;
+    padding-bottom: 15px;
+    font-size: 21px;
+
+    @include about-tablets-max {
+      font-size: 30px;
+      padding-bottom: 12px;
+    }
+
+    @include about-laptops-max {
+      font-size: 35px;
+      padding-bottom: 24px;
+    }
+
+    @include tablets {
+      font-size: 30px;
+      padding-bottom: 12px;
+    }
+
+    @media screen and (min-width: 1651px) {
+      padding-bottom: 26px;
+    }
+
     &:after {
-      padding-top: 19px !important;
+      padding-top: 4px !important;
+
+      @include about-tablets-max {
+        padding-top: 7px !important;
+      }
+
+      @include tablets {
+        padding-top: 7px !important;
+      }
+
+      @include laptops {
+        padding-top: 19px !important;
+      }
     }
   }
 
   &--about-right {
-    padding-bottom: 18px;
+    padding-bottom: 12px;
+    font-size: 21px;
+    line-height: 28px;
+
+    @include about-tablets-max {
+      font-size: 30px;
+      padding-bottom: 6px;
+    }
+
+    @include about-tablets-max {
+      font-size: 30px;
+      padding-bottom: 6px;
+      line-height: 36px;
+    }
+
+    @include tablets {
+      font-size: 30px;
+      padding-bottom: 6px;
+      line-height: 36px;
+    }
+
+    @include laptops {
+      font-size: 35px;
+      line-height: 41px;
+      padding-bottom: 18px;
+    }
+
+    @include desktops {
+      padding-bottom: 17px;
+    }
 
     &:after {
-      padding-top: 19px !important;
+      @include laptops {
+        padding-top: 19px !important;
+      }
+      
+      @include about-laptops-max {
+        padding-top: 20px! important;
+      }
+      
+      @include about-tablets-max {
+        padding-top: 11px !important;
+      }
+
+      @include tablets {
+        padding-top: 11px !important;
+      }
     }
+
   }
 
   &--map-contacts {
-    padding-bottom: 30px;
+    padding-bottom: 18px;
+    font-size: 35px;
 
-    &:after {
-      padding-top: 19px !important;
+    @include about-tablets-max {
+      font-size: 30px;
+      padding-bottom: 21px;
+
+      &:after {
+        padding-top: 7px !important;
+      }
+    }
+
+    @include tablets {
+      font-size: 30px;
+      padding-bottom: 21px;
+
+      &:after {
+        padding-top: 7px !important;
+      }
+    }
+
+    @include laptops {
+      font-size: 35px;
+      padding-bottom: 30px;
+
+      &:after {
+        padding-top: 19px !important;
+      }
     }
   }
 
@@ -100,5 +215,13 @@ h2.block-subtitle {
       border-bottom: 3px solid rgba(255, 255, 255, .5) !important;
       padding-top: 19px !important; 
     }
+  }
+}
+
+.block-subtitle__sub-text {
+  display: inline;
+
+  @media screen and (max-width: 491px) {
+    display: block;
   }
 }

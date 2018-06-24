@@ -2,10 +2,19 @@
 
   .about__split {
     display: flex;
+    flex-direction: column;
+
+    @include laptops {
+      flex-direction: row;
+    }
   }
   
   &__left, &__right {
-    width: 50%;
+    width: 100%;
+    
+    @include laptops {
+      width: 50%;
+    }
   }
 
   &__left {
@@ -15,46 +24,170 @@
     &-wrapper {
       background-color: $triangle-beige;
       display: flex;
-      margin-right: 19px;
-  
-      .about__left-title {
-        margin-top: -95px;
-        position: relative;
-        width: 48%;
-        height: 229px;
+      flex-direction: column;
+
+      .about__left-title, .about__left-content {
+        width: 100%;
       }
-  
-      .about__left-content {
-        width: 52%;
+
+      .about__left-title {
+        height: 89px;
+        position: relative;
+
+        @include tablets {
+          height: 179px;
+          margin-top: -53px;
+        }
+
+        @include laptops {
+          height: 203px;
+          margin-top: -95px;
+        }
       }
 
       .about__left-block-title {
-        padding-top: 71px;
-        padding-left: 44px;
+        padding-top: 11px;
+
+        @include tablets {  
+          padding-top: 76px;
+        }
+
+        @include laptops {
+          padding-top: 77px;
+        }
+
+        @include desktops {
+          padding-top: 70px;
+        }
+      }
+
+      @media screen and (min-width: 1651px) {
+        margin-right: 19px;
+        flex-direction: row;
+
+        .about__left-title {
+          height: 229px;
+          width: 48%;
+        }
+    
+        .about__left-content {
+          width: 52%;
+        }
+
+        .about__left-block-title {
+          padding-left: 44px;
+        }
       }
     }
-    
   }
 
   &__right {
-    background: $triangle-brown;
+    background: #f4f5f0;
+
+    @include about-laptops-max {
+      padding-top: 5px;
+    }
+
+    @include about-tablets-max {
+      padding-top: 49px;
+    }
+
+    @include tablets {
+      padding-top: 49px;
+    }
+
+    @media screen and (min-width: 1651px) {
+      background: $triangle-brown;
+      padding-top: 0;
+    }
     
     .about__right-title {
       width: 270px;
       margin: auto;
-      position: relative;
-      top: -7px;
+      margin-top: 24px;
+
+      @include about-tablets-max {
+        position: relative;
+        top: -7px;
+        margin-top: 0;
+      }
+
+      @include tablets {
+        position: relative;
+        top: -7px;
+        margin-top: 0;
+      }
+      
+      @include laptops {
+        position: relative;
+        top: -7px;
+        margin-top: 0;
+      }
+
+      @include desktops {
+        position: relative;
+        top: -8px;
+        margin-top: 0;
+      }
     }
 
     .about__right-description {
-      margin-bottom: 45px;
-      padding: 0 40px;
+      margin-bottom: 17px;
+      padding: 0 10px;
       line-height: 24px;
+
+      @include about-tablets-max {
+        max-width: 472px;
+        margin: auto;
+        padding: 0;
+        margin-bottom: 37px;
+      }
+
+      @include about-laptops-max {
+        margin-bottom: 45px;
+        padding: 0 40px;
+      }
+
+      @include tablets {
+        max-width: 472px;
+        margin: auto;
+        padding: 0;
+        margin-bottom: 37px;
+      }
+
+      @include laptops {
+        max-width: 100%;
+        padding: 0 40px;
+        margin-bottom: 45px;
+      }
+
+      @media screen and (min-width: 1651px) {
+        margin-bottom: 45px;
+      }
     }
 
     .about__right-content {
-      margin-bottom: 43px;
-      padding: 0 40px;
+      margin-bottom: 6px;
+
+      @include about-tablets-max {
+        margin-bottom: 43px;
+      }
+
+      @include about-laptops-max {
+        padding: 0;
+        padding-left: 40px;
+        margin-bottom: 43px;
+      }
+
+      @include tablets {
+        padding: 0;
+        margin-bottom: 43px;
+      }
+
+      @include laptops {
+        padding: 0 40px;
+        margin-bottom: 43px;
+      }
     }
   }
 }
@@ -62,12 +195,54 @@
 .about__user-description {
   display: flex;
   flex-flow: column nowrap;
-  margin-left: 15px;
+
+  @include about-tablets-max {
+    margin: auto;
+    max-width: 472px;
+    margin-bottom: 31px;
+  }
+
+  @include about-laptops-max {
+    max-width: 444px;
+    margin: auto;
+    margin-bottom: 12px;
+  }
+
+  @include tablets {
+    margin: auto;
+    max-width: 472px;
+    margin-bottom: 31px;
+  }
+
+  @media screen and (min-width: 1651px) {
+    margin-left: 15px;
+  }
 
   .user-description__image {
     max-height: 506px;
     width: 100%;
-    margin-bottom: 32px;
+    margin: auto;
+    margin-bottom: 12px;
+    max-width: 472px;
+    overflow: hidden;
+
+    @include about-tablets-max {
+      margin-bottom: 73px;
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    @include tablets {
+      margin-bottom: 73px;
+      max-width: 100%;
+      overflow: visible;
+    }
+
+    @include laptops {
+      margin-bottom: 32px;
+      max-width: 100%;
+      overflow: visible;
+    }
   }
 
   .user-description__avatar {
@@ -76,6 +251,15 @@
   }
 
   .user-description__text {
+    @media screen and (max-width: 491px) {
+      margin: 0 10px 12px;
+    }
+
+    @media screen and (min-width: 492px) and (max-width: $tablets-width-max) {
+      max-width: 472px;
+      margin: auto;
+    }
+
     line-height: 24px;
     p {
       padding-bottom: 10px;

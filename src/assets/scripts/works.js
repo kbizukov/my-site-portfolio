@@ -1,1 +1,1 @@
-import slider from "./modules/slider";
+// import slider from "./modules/slider";

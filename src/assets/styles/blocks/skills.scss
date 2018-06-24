@@ -1,5 +1,23 @@
 .skills-row__list {
-  margin-bottom: 26px;
+  margin-bottom: 1px;
+  
+  @media screen and (min-width: 620px) {
+    margin-bottom: 26px;
+  }
+
+  @media screen and (max-width: 1199px) {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+  }
+
+  @include tablets {
+    margin-bottom: 32px;
+  }
+
+  @include laptops {
+    margin-bottom: 26px;
+  }
 }
 
 .skills-row__item {
@@ -7,13 +25,36 @@
   width: 120px;
   height: 120px;
 
+  @media screen and (max-width: 619px) {
+    margin-bottom: 18px;    
+  }
+
   &:not(:last-child) {
     margin-right: 40px;
+  }
+
+  @include about-laptops-max {
+    width: 110px;
+    height: 110px;
+
+    &:not(:last-child) {
+      margin-right: 37px;
+    }
+  }
+  
+  @media screen and (max-width: 1199px) {
+    margin-right: 0 !important;
   }
 }
 
 .skills-row__title {
   @include roboto-medium;
-  font-size: 28px;
+  font-size: 20.94px;
+  text-align: center;
   margin-bottom: 10px;
+
+  @include laptops {
+    font-size: 28px;
+    text-align: left;
+  }
 }

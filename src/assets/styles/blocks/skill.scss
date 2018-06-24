@@ -5,6 +5,11 @@
   height: 120px;
   margin: 0;
   
+  @include about-laptops-max {
+    width: 110px;
+    height: 110px;
+  }
+
   &__figure {
     position: absolute;
     top: 0;
@@ -18,10 +23,13 @@
     fill: transparent;
     stroke: #dfdcd5;
     stroke-width: 15px;
+    // @include about-laptops-max {
+    //   stroke-width: 20px;
+    // }
   }
   
   &__circle_above {
-    stroke: #1056d1;
+    stroke: #004cd1; // #1056d1;
     stroke-dasharray: 251; // расстояние между линиями
     // stroke-dashoffset: 55; // смещение чтбы выглядело не заполненно 251 - круг полностью голый
   }
@@ -29,12 +37,17 @@
   &__title {
     color: #243994;
     text-align: center;
-    font-size: 13.96px;
+    font-size: 12.82px;
     @include roboto-medium;
     position: absolute;
     left: 50%;
     top: 50%;
     text-align: center;
     transform: translate(-50%, -50%);
+
+    
+    @media screen and (min-wdth: 1651px) {
+      font-size: 13.96px;
+    }
   }
 }

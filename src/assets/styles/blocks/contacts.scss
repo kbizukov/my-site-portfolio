@@ -1,15 +1,39 @@
 .contacts {
-  // display: flex;
-  background: rgba(255, 255, 255, .7);
+  background: #fff;
   margin: auto;
+  width: 100%;
 
-  @media screen {
+  @include tablets {
+    background: rgba(255, 255, 255, .7);
+    height: 374px;
+    width: 348px;
+  }
+
+  @include laptops {
+    background: rgba(255, 255, 255, .7);
+    height: 293px;
     width: 580px;
+  }
+
+  @include desktops {
     height: 283px;
+    width: 580px;
   }
 
   &__title {
-    margin-top: 28px;
+    margin-top: 22px;
+
+    // @include about-tablets-max {
+    //   margin-top: 28px;
+    // }
+
+    @include tablets {
+      margin-top: 30px;
+    }
+
+    @include laptops {
+      margin-top: 28px;
+    }
   }
 
   &__data {
@@ -20,32 +44,84 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media screen and (max-width: 767px) {
+      margin-bottom: 21px;
+    }
+
     .contacts__item {
       padding: 0;
       margin: 0;
-      padding-left: 19px;
-      margin-bottom: 24px;
+      padding-left: 10px;
+      margin-bottom: 4px;
       display: flex;
-      width: 50%;
-      // align-items: center;
       @include roboto-medium;
+      width: 100%;
 
       &:nth-child(even) {
-        padding-left: 10px;
+        order: 1;
+      }
+
+      @include about-tablets-max {
+        width: 50%;
+        // margin-bottom: 24px;
+        // padding-left: 19px;
+      }
+
+      @include tablets {
+        margin-bottom: 24px;
+        margin-bottom: 15px;
+        padding-left: 19px;
+      }
+
+      @include laptops {
+        margin-bottom: 24px;
+        padding-left: 19px;
+        width: 50%;
+        &:nth-child(even) {
+          padding-left: 10px;
+          order: 0;
+        }
       }
 
       .contacts__description {
-        padding-top: 12px;
+        padding-top: 9px;
         opacity: 0.8;
+
+        // @include about-tablets-max {
+        //   padding-top: 12px;
+        // }
+        
+        @include tablets {
+          padding-top: 12px;
+        }
+        
+        @include laptops {
+          padding-top: 12px;
+        }
       }
     }
 
     .contacts__icon {
       margin-right: 9px;
       &-img {
-        width: 45px;
-        height: 45px;
+        height: 35px;
+        width: 34px;
         fill: #004cd1;
+
+        // @include about-tablets-max {
+        //   width: 45px;
+        //   height: 45px;
+        // }
+
+        @include tablets {
+          width: 45px;
+          height: 45px;
+        }
+
+        @include laptops {
+          width: 45px;
+          height: 45px;
+        }
       }
     }
   }
