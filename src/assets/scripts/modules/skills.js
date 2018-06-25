@@ -17,10 +17,31 @@ const skill = {
 
       circle.style.strokeDashoffset = percents;
       circle.style.opacity = opacity;
+    },
+    scrollTo() {
+      const WIN = window;
+      const wScroll = WIN.pageYOffset;
+      const section = document.querySelector(".skills-list");
+      const windowMargin = WIN.innerHeight / 70;
+      const sectionRect = section.getBoundingClientRect();
+      const sectionPos = sectionRect.top;
+
+      let startAnimate = wScroll - sectionPos + windowMargin;
+      let pixelsElapsed = sectionPos - wScroll;
+      let percentsElapsed =
+        100 - Math.ceil((pixelsElapsed / windowMargin) * 100);
+      let percentsDraw = (151 / 100) * pixelsElapsed;
+
+      // console.log("startAnimate", startAnimate);
+
+      if (startAnimate >= 0) {
+        this.drawCircle();
+        WIN.removeEventListener("scroll", this.scrollTo);
+      }
     }
   },
   mounted() {
-    this.drawCircle();
+    window.addEventListener("scroll", this.scrollTo);
   }
 };
 

@@ -72,8 +72,6 @@ new Vue({
   },
   methods: {
     handleSlide(direction) {
-      console.log("direction", direction);
-
       switch (direction) {
         case "next":
           this.currentIndex++;
@@ -83,8 +81,6 @@ new Vue({
           this.currentIndex--;
           break;
       }
-
-      console.log("direction", direction);
     }
   },
   template: "#slider"

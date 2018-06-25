@@ -28,7 +28,7 @@ const parallax = (function() {
   };
 })();
 
-WIN.onscroll = function() {
+window.addEventListener("scroll", function() {
   var wScroll = window.pageYOffset;
   parallax.init(wScroll);
-};
+});
