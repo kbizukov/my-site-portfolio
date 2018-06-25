@@ -22,19 +22,9 @@ const skill = {
       const WIN = window;
       const wScroll = WIN.pageYOffset;
       const section = document.querySelector(".skills-list");
-      const windowMargin = WIN.innerHeight / 70;
-      const sectionRect = section.getBoundingClientRect();
-      const sectionPos = sectionRect.top;
+      const sectionPos = section.offsetTop * 0.75;
 
-      let startAnimate = wScroll - sectionPos + windowMargin;
-      let pixelsElapsed = sectionPos - wScroll;
-      let percentsElapsed =
-        100 - Math.ceil((pixelsElapsed / windowMargin) * 100);
-      let percentsDraw = (151 / 100) * pixelsElapsed;
-
-      // console.log("startAnimate", startAnimate);
-
-      if (startAnimate >= 0) {
+      if (wScroll >= sectionPos) {
         this.drawCircle();
         WIN.removeEventListener("scroll", this.scrollTo);
       }
