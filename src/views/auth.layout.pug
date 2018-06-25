@@ -14,9 +14,10 @@ html(lang="en")
     
     #background-container
     script(type="text/x-template")#background
-      .background(v-on:resize="changeBackground")
+      .background
         <template v-if="allowed">
-          +image("mountains-bg.png", "Горы", "background__img")
+          .background__layer
+            +image("mountains-bg.png", "Горы", "background__img")
           video(class="background__video" src="assets/images/night.mp4" autoplay muted loop)
         </template>
 

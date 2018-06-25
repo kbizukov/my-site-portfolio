@@ -1,23 +1,27 @@
 .works-background {
   width: 100%;
-  height: calc(100vh + 172px);
-  background-size: cover;
+  // height: calc(100vh + 172px);
+  height: 138vh;
   position: absolute;
   top: 0;
   z-index: -1;
 
-  background: url(assets/images/bg-phone.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+  background: url(assets/images/bg-phone.jpg) top no-repeat;
+  background-size: 100vw 100%;
 
-    @media screen and (min-width: 426px) {
-      background: url(assets/images/bg-tablet.jpg) no-repeat;
-      background-size: cover;
-      background-position: center;
+    @include tablets {
+      background: url(assets/images/bg-1200.jpg) top no-repeat;
+      background-size: 100vw 100%;
     }
+    
+    @media screen and (min-width: 426px) and (max-width: 850px) {
+      background: url(assets/images/bg-tablet.jpg) top no-repeat;
+      background-size: 100vw 100%;
+    }
+
     @include laptops {
-      background: url(assets/images/about-header-1800.jpg) no-repeat;
-      background-size: cover;
+      background: url(assets/images/bg-1800.jpg) top no-repeat;
+      background-size: 100vw 100%;
     }
 }
 

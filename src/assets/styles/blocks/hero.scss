@@ -4,21 +4,25 @@
   position: relative;
 
   &:not(&--works) {
-    background: url(assets/images/bg-phone.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+    background: url(assets/images/bg-phone.jpg) top no-repeat;
+    background-size: 100vw 118vh;
 
-    @media screen and (min-width: 426px) {
-      background: url(assets/images/bg-tablet.jpg) no-repeat;
-      background-size: cover;
-      background-position: center;
+    @include tablets {
+      background: url(assets/images/bg-1200.jpg) top no-repeat;
+      background-size: 100vw 118vh;
     }
+
+    @media screen and (min-width: 426px) and (max-width: 850px) {
+      background: url(assets/images/bg-tablet.jpg) top no-repeat;
+      background-size: 100vw 118vh;
+    }
+
     @include laptops {
-      background: url(assets/images/about-header-1800.jpg) no-repeat;
-      background-size: cover;
-      // background-position: center;
+      background: url(assets/images/bg-1800.jpg) top no-repeat;
+      background-size: 100vw 118vh;
     }
-    background-size: cover;
+
+    background-size: 100vw 118vh;
     z-index: 0;
   }
 

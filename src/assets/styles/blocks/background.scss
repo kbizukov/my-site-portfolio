@@ -1,17 +1,31 @@
 .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 
   &__img {
-    width: 100vw;
-    position: fixed;
-    
+    width: 110vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 0;
 
     @media screen and (min-width: $desktop-width) {
-      bottom: -160px;
+      bottom: -60px;
     }
     
     @media screen and (min-width: $laptop-width) and (max-width: 1799px) {
-      bottom: -40px;
+      bottom: -30px;
     }
   }
 

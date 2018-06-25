@@ -1,4 +1,5 @@
 import "./modules/fullscreen-menu";
+import "./modules/parallax-scroll";
 
 // import Vue from "vue";
 
