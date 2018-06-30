@@ -25,7 +25,11 @@ block content
       .hero__user.hero__user--works
         include ../common/user
 
-    a(href="#works").down-btn.hero__down-btn.hero__down-btn--works
+    #down-btn-container
+      anchor-button(
+        classes="down-btn hero__down-btn hero__down-btn--works"
+        scrollToElem="works"
+      )
 
     .hero__bottom
       .hero__triangle
@@ -75,7 +79,11 @@ block content
             li.bottom-nav__item.bottom-nav__item--clear
               a.bottom-nav__link.bottom-nav__link--clear Очистить
 
-    a(href="#top").down-btn.down-btn--reverted.works-scroll-top-btn
+    #up-btn-container
+      anchor-button(
+        classes="down-btn down-btn--reverted works-scroll-top-btn"
+        scrollToElem="top"
+      )
 
   .works__footer--over
     include ../common/footer

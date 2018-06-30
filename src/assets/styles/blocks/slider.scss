@@ -44,6 +44,20 @@
     width: 330px;
     min-height: 260px;
   }
+
+  .block-subtitle--works {
+    // display: inline-flex;
+    // flex-wrap: nowrap;
+    // justify-content: center;
+    span {
+      display: inline-block;
+      &.whitespace {
+        &:after {
+          content: "\00a0";
+        }
+      }
+    }
+  }
 }
 
 .slider__info-container {
@@ -58,6 +72,25 @@
   text-align: center;
   color: $blue;
   margin-bottom: 14px;
+  font-size: 0;
+  white-space: nowrap;
+
+  span {
+    display: inline-block;
+    font-size: 14px;
+    &.whitespace {
+      &:after {
+        content: "\00a0";
+      }
+    }
+
+    @include tablets {
+      font-size: 16px;
+    }
+    @include laptops {
+      font-size: 16px;
+    }
+  }
 
   @include tablets {
     font-size: 16px;
@@ -117,6 +150,7 @@
 .slider__buttons {
   grid-area: buttons;
   display: flex;
+  overflow: hidden;
 }
 
 .slider__button { 
@@ -125,10 +159,6 @@
   position: relative;
   user-select: none;
   transition: .5s;
-
-  &:hover {
-    opacity: .7;
-  }
 
   &:before {
     content: "";
@@ -151,12 +181,28 @@
     height: 29px;
     background: svg-load('portf_arrow_down.svg', fill=#ffffff) center center no-repeat / contain;
     z-index: 20;
+    transition: top .5s;
   }
 
   &--next {
     &:after {
-      // transform:  translate(-50%, -50%) rotate(-180deg);
       background: svg-load('portf_arrow_up.svg', fill=#ffffff) center center no-repeat / contain;
+    }
+  }
+
+  &:hover {
+    opacity: .7;
+
+    &:after {
+      top: 60%;
+    }
+  }
+  
+  &--next {
+    &:hover {
+      &:after {
+        top: 40% !important;
+      }
     }
   }
 }
@@ -169,8 +215,9 @@
 
 .slider__button-img-wrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  // top: 0;
+  // left: 0;
+  bottom: 0;
   width: 100%;
   height: 100%;
   display: flex;
@@ -182,6 +229,14 @@
   display: block;
   max-width: 90%;
   max-height: 90%;
+}
+
+.slider__button-img-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 .slide-down-enter-active, .slide-down-leave-active {
@@ -263,9 +318,37 @@
   }
 }
 
+.transparent {
+  opacity: 0;
+}
+
+.lettersWrapper {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .bounceIn {
-  animation-duration: 2s;
+  animation-duration: .75s;
   animation-name: bounceIn;
 }
 
-// @media screen and device-pixel-ratio ()
+
+.fade-slide-enter-active, .fade-slide-leave-active {
+  transition: .7s;
+}
+
+.fade-slide-leave {
+  opacity: 1;
+}
+
+.fade-slide-leave-to {
+  opacity: 0;
+}
+
+.fade-slide-enter {
+  opacity: 0;
+}
+
+.fade-slide-enter-to {
+  opacity: 1;
+}

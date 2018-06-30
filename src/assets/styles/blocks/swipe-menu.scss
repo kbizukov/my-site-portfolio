@@ -11,7 +11,7 @@
   position: fixed;
   transition: left .6s;
   
-  @include laptops {
+  @include from-tablets {
     display: none;
   }
 

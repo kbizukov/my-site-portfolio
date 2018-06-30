@@ -37,9 +37,10 @@
   border: 1px solid #fff;
   background: transparent;
   @include roboto-medium;
+  transition: all .4s !important;
 
   &:hover {
-    border: none;
+    border-color: transparent;
     background: $blue;
   }
 

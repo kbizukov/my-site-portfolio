@@ -4,6 +4,62 @@ const info = {
   template: "#slider-info",
   props: {
     work: Object
+  },
+  methods: {
+    enterHandler(el, done) {
+      const sentence = el.innerText.trim();
+      const wrapped = sentence
+        .split("")
+        .map((item, index, list) => {
+          var startWord = "<div class='lettersWrapper'>",
+            endWord = "</div>",
+            span = `<span class="${
+              item === " " ? "transparent whitespace" : "transparent"
+            }">${item}</span>`,
+            between = `${
+              item === " " ? `${endWord}${span}${startWord}` : `${span}`
+            }`;
+
+          if (index == 0) {
+            var row = startWord + between;
+          } else if (index == list.length - 1) {
+            row = between + endWord;
+          } else {
+            row = between;
+          }
+
+          return row;
+        })
+        .join("");
+
+      el.innerHTML = wrapped;
+
+      const words = Array.from(el.querySelectorAll("span.transparent"));
+
+      let i = 0;
+      function animate(words) {
+        const currentLetter = words[i];
+
+        let timer = setTimeout(() => {
+          animate(words);
+        }, 20);
+
+        currentLetter.classList.remove("transparent");
+        currentLetter.classList.add("bounceIn");
+
+        i++;
+
+        if (i >= words.length) {
+          clearTimeout(timer);
+          done();
+        }
+      }
+
+      animate(words);
+    },
+    enterTitleHandler(el, done) {
+      // this.enterHandler(el, done);
+    }
   }
 };
 

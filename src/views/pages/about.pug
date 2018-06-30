@@ -23,7 +23,11 @@ block content
       .hero__user.hero__user--about
         include ../common/user
 
-    a(href="#about").down-btn.hero__down-btn.hero__down-btn--about
+    #down-btn-container
+      anchor-button(
+        classes="down-btn hero__down-btn hero__down-btn--about"
+        scrollToElem="about"
+      )
 
     .hero__triangle
       svg.triangle(xmlns="http://www.w3.org/2000/svg" viewbox="0 0 1000 98" preserveaspectratio="none")

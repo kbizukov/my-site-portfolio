@@ -18,6 +18,12 @@ body.welcome--no-overflow {
     background-position-y: center;
   }
 
+  @media screen and (min-width: 850px){
+    background: url('./assets/images/welcome-bg-1200.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
   @include laptops {
     background: none;
   }
@@ -28,6 +34,7 @@ body.welcome--no-overflow {
     z-index: 1;
     transform-style: preserve-3d;
     transition: transform 0.8s;
+    perspective: 1000px;
 
     
     @include laptops {
@@ -45,14 +52,14 @@ body.welcome--no-overflow {
     &--login {
       height: 405px;
     }
-
-    &.rotate {
-      transform: rotateY(180deg);
-    }
   }
 
   .welcome {
-    transform: rotateY(0deg);
+    // transform: rotateY(0deg);
+
+    // &.rotate {
+    //   transform: rotateY(180deg);
+    // }
 
     .user__name {
       margin-top: 10px;
@@ -76,3 +83,44 @@ body.welcome--no-overflow {
     }
   }
 }
+
+
+.flip-enter-active, .flip-leave-active {
+  transition: 1s linear;
+}
+
+.flip-leave {
+  transform: rotateY(0);
+}
+
+.flip-leave-to {
+  transform: rotateY(180deg);
+}
+
+.flip-enter {
+  transform: rotateY(180deg);
+}
+
+.flip-enter-to {
+  transform: rotateY(360deg);
+}
+
+// .flip-reverse-enter-active, .flip-reverse-leave-active {
+//   transition: 1s linear;
+// }
+
+// .flip-reverse-leave {
+//   transform: rotateY(-360deg);
+// }
+
+// .flip-reverse-leave-to {
+//   transform: rotateY(-180deg);
+// }
+
+// .flip-reverse-enter {
+//   transform: rotateY(-180deg);
+// }
+
+// .flip-reverse-enter-to {
+//   transform: rotateY(-360deg);
+// }

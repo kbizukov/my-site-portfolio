@@ -27,6 +27,11 @@
   &--blog {
     position: relative;
     top: 8px;
+    width: 100%;
+
+    @media screen and (min-width: 985px) {
+      width: 280px;
+    }
 
     @include desktops {
       margin-right: 15px;

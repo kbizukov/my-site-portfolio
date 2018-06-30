@@ -1,16 +1,7 @@
 import "./modules/fullscreen-menu";
 import "./modules/parallax-scroll";
-
-// import Vue from "vue";
-
-// new Vue({
-//   el: "#animation-root",
-//   data: {
-//     show: true,
-//     title: "Hello world"
-//   },
-//   template: "#animation"
-// });
+import "./modules/btn";
+import "./modules/down-btn";
 
 $(function() {
   const WIN = window;
@@ -18,6 +9,8 @@ $(function() {
   const SCR = screen;
   const $articles = $(".blog__article"); // статьи справа
   const articles = $articles.toArray(); // []
+  const $nav = $(".nav--blog");
+  // const $footer = $(".footer");
   const $articlesList = $(".nav__list"); // ul со списком статей слева
   const $articleTitles = $(".blog__nav"); // aside
   const $navItem = $(".nav__item");
@@ -73,6 +66,7 @@ $(function() {
   function setArticleChords() {
     // в elemChords получаем объект с координатами aside
     const elemChords = getCoords($articleTitles[0]);
+    // const footerChords = $footer.offset();
 
     if (WIN.pageYOffset >= elemChords.top - 30) {
       $articlesList.css({
@@ -88,9 +82,9 @@ $(function() {
   }
 
   function setArticlesWidth() {
-    if (SCR.availWidth > 1199) {
+    if (SCR.availWidth > 767) {
       $articlesList.css({
-        width: $articlesList.outerWidth()
+        width: $nav.innerWidth()
       });
     } else {
       $articlesList.removeAttr("style");

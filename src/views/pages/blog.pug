@@ -29,7 +29,11 @@ block content
             h1.hero__title-header.block-title #{title}
             p.user__info Статьи, которые я написал
 
-    a(href="#blog").down-btn.hero__down-btn.hero__down-btn--blog
+    #down-btn-container
+      anchor-button(
+        classes="down-btn hero__down-btn hero__down-btn--blog"
+        scrollToElem="blog"
+      )
 
     .hero__triangle
       svg.triangle(xmlns='http://www.w3.org/2000/svg' x='0px', y='0px', width='100%', height='100%', viewbox='0 0 2032 175.368')

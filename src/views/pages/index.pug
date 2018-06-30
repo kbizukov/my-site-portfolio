@@ -1,63 +1,85 @@
 extends ../auth.layout.pug
 
 block content
-  .auth-block.auth-block--welcome
-    button.auth-button#auth-button Авторизоваться
 
+  #auth-container
+  script(type="text/x-template")#auth-block
+    .auth-block.auth-block--welcome
+      button.auth-button#auth-button(
+        v-on:click="switchComponents"
+      ) Авторизоваться
+
+  
   .welcome-wrapper
-    #welcome-turner.welcome-turner.welcome-turner--welcome.welcome-turner--login
-      .welcome
-        include ../common/user
+    #welcome-turner
 
-        .welcome__socials
-          +socials('')
+  script(type="text/x-template")#turner
+    .welcome-turner.welcome-turner--welcome.welcome-turner--login
+      transition(:name="animationDirection")
+        component(:is="compToShow")
 
-        nav.bottom-nav
-          ul.bottom-nav__list
-            li.bottom-nav__item.bottom-nav__item--works
-              a(class="bottom-nav__link" href="works.html") Мои работы
-            li.bottom-nav__item.bottom-nav__item--about
-              a(class="bottom-nav__link" href="about.html") Обо мне
-            li.bottom-nav__item.bottom-nav__item--blog
-              a(class="bottom-nav__link" href="blog.html") Блог
 
-      form.login(action="")
-        h2.login__title Авторизуйтесь
-        .login__inputs
-          .login__input-container
-            .login__icon-container
-              +icon('login', 'login__icon login__icon--login')
-            input.login__input(type=text placeholder="Логин" required)
-          .login__input-container
-            .login__icon-container
-              +icon('password', 'login__icon')
-            input.login__input(type=text placeholder="Пароль" required)
-        
-        .login__confirm-not-robot
-          .login__confirm-row
-            label.login__confirm-label
-              input.login__confirm-input(type="checkbox" required)
-              .login__confirm-icon-container
-                +icon('check', 'login__icon login__icon--checkbox')
-              span.login__label-text Я человек
-            
-          .login__confirm-text Вы точно не робот?
+  script(type="text/x-template")#welcome
+    .welcome
+      include ../common/user
+
+      .welcome__socials
+        +socials('')
+
+      nav.bottom-nav
+        ul.bottom-nav__list
+          li.bottom-nav__item.bottom-nav__item--works
+            a(class="bottom-nav__link" href="works.html") Мои работы
+          li.bottom-nav__item.bottom-nav__item--about
+            a(class="bottom-nav__link" href="about.html") Обо мне
+          li.bottom-nav__item.bottom-nav__item--blog
+            a(class="bottom-nav__link" href="blog.html") Блог
+
+  script(type="text/x-template")#login
+    form.login(action="")
+      h2.login__title Авторизуйтесь
+      .login__inputs
+        .login__input-container
+          .login__icon-container
+            +icon('login', 'login__icon login__icon--login')
+          input.login__input(type=text placeholder="Логин" required)
+        .login__input-container
+          .login__icon-container
+            +icon('password', 'login__icon')
+          input.login__input(type=text placeholder="Пароль" required)
+      
+      .login__confirm-not-robot
+        .login__confirm-row
+          label.login__confirm-label
+            input.login__confirm-input(type="checkbox" required)
+            .login__confirm-icon-container
+              +icon('check', 'login__icon login__icon--checkbox')
+            span.login__label-text Я человек
           
-          .login__confirm-row
-            .login__confirm-radios
-              label.login__confirm-label.login__confirm-label--first
-                input.login__confirm-input(type="radio" name="confirm-not-robot")
-                .login__confirm-icon-container.login__confirm-icon-container--circle.login__confirm-icon-container--yes
-                span.login__label-text Да
+        .login__confirm-text Вы точно не робот?
+        
+        .login__confirm-row
+          .login__confirm-radios
+            label.login__confirm-label.login__confirm-label--first
+              input.login__confirm-input(type="radio" name="confirm-not-robot")
+              .login__confirm-icon-container.login__confirm-icon-container--circle.login__confirm-icon-container--yes
+              span.login__label-text Да
 
-              label.login__confirm-label
-                input.login__confirm-input(type="radio" name="confirm-not-robot")
-                .login__confirm-icon-container.login__confirm-icon-container--circle
-                span.login__label-text Не уверен
+            label.login__confirm-label
+              input.login__confirm-input(type="radio" name="confirm-not-robot")
+              .login__confirm-icon-container.login__confirm-icon-container--circle
+              span.login__label-text Не уверен
 
-        nav.bottom-nav
-          ul.bottom-nav__list
-            li.bottom-nav__item.bottom-nav__item--main
-              a(class="bottom-nav__link" id="nav-to-main" href="") На главную
-            li.bottom-nav__item.bottom-nav__item--enter
-              a(class="bottom-nav__link" href="" type="submit") Войти
+      nav.bottom-nav
+        ul.bottom-nav__list
+          li.bottom-nav__item.bottom-nav__item--main
+            a#nav-to-main.bottom-nav__link(
+              v-on:click.prevent="toMainHandler"
+              href=""
+            ) На главную
+          li.bottom-nav__item.bottom-nav__item--enter
+            a.bottom-nav__link(
+              href=""
+              type="submit"
+              v-on:click.prevent="submitForm"
+            ) Войти

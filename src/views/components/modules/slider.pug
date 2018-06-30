@@ -16,21 +16,35 @@ script(type="text/x-template")#slider-info
   .slider__info-container
     .slider__info
       .slider__info-title
-        h2.block-subtitle.block-subtitle--works.subtitle {{work.title}}
-      .slider__info-skills {{work.skills}}
+        transition-group(
+          appear
+          :css="false"
+          tag="div"
+          @enter="enterHandler"
+        )
+          h2.block-subtitle.block-subtitle--works.subtitle(:key="work.title") {{work.title}}
+      transition-group(
+        appear
+        :css="false"
+        @enter="enterHandler"
+      )
+        .slider__info-skills(:key="work.skills") {{work.skills}}
       .slider__info-button
         +icon('link', 'slider__info-icon')
         a(:href="work.link" target="_blank").slider__info-link Посмотреть сайт
 
 script(type="text/x-template")#slider-display
   .slider__display
-    img(:src="work.photo").slider__big-pic
+    transition(name="fade-slide" mode="out-in")
+      img(:src="work.photo" :key="work.photo" :v-if="work.photo").slider__big-pic
 
 script(type="text/x-template")#slider-buttons
   .slider__buttons
-    .slider__button.slider__button(@click="slide('prev')")
-      .slider__button-img-wrap
-        img(:src="getReqImage('prev').photo", alt="").slider__button-pic
+    .slider__button(@click="slide('prev')")
+      transition-group(name="slide-down" tag="div").slider__button-img-container
+        .slider__button-img-wrap(:key="getReqImage('prev').photo")
+          img(:src="getReqImage('prev').photo", alt="").slider__button-pic
     .slider__button.slider__button--next(@click="slide('next')")
-      .slider__button-img-wrap
-        img(:src="getReqImage('next').photo", alt="").slider__button-pic
+      transition-group(name="slide-up" tag="div").slider__button-img-container
+        .slider__button-img-wrap(:key="getReqImage('next').photo")
+          img(:src="getReqImage('next').photo", alt="").slider__button-pic
