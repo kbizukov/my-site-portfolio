@@ -1,0 +1,14 @@
+script(type="text/x-template")#message-popup
+  transition(
+    name="fade-popup"
+    @after-enter="afterEnter"
+    @leave="animationLeave"
+    )
+    template(v-if="visible")
+      .message-popup-wrapper(:key="message")
+        .message-popup
+          p.message-popup__text {{message}}
+          .message-popup__button-container
+            button.message-popup__button(
+              @click="closePopup"
+            ) Закрыть

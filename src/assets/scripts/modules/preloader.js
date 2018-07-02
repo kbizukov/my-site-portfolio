@@ -53,7 +53,7 @@ const preloader = Vue.component("preloader", {
       });
 
       let imgs = imgPath.toArray();
-      console.log("imgs", imgs);
+      // console.log("imgs", imgs);
       this.loadImages(imgs);
     },
     loadImages(images) {
@@ -88,12 +88,12 @@ const preloader = Vue.component("preloader", {
       );
     },
     fillStatusCircle() {
-      console.log("this.dashOffset", this.dashOffset);
+      // console.log("this.dashOffset", this.dashOffset);
       const circle = DOC.querySelector(".preloader__circle");
       if (!circle) return;
 
       const percents = (this.dashOffset / 100) * (100 - this.percents);
-      console.log("percents", percents);
+      // console.log("percents", percents);
       circle.style.strokeDashoffset = percents;
     }
   },

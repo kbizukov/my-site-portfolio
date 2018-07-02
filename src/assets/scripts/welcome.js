@@ -1,4 +1,9 @@
 import Vue from "vue";
+import Api from "./api";
+
+const WIN = window;
+const DOC = document;
+const BODY = DOC.getElementsByTagName("body")[0];
 
 const welcome = {
   template: "#welcome"
@@ -6,13 +11,65 @@ const welcome = {
 
 const login = {
   template: "#login",
+  data() {
+    return {
+      confirmHuman: false
+    };
+  },
   methods: {
     toMainHandler() {
-      const body = document.getElementsByTagName("body")[0];
-      body.click();
+      BODY.click();
     },
-    submitForm(e) {
-      console.log("e", e);
+    submitForm() {
+      let validated = this.validateForm();
+      if (!validated) return;
+
+      console.log("validated", validated);
+      Api.login(validated).then(
+        data => {
+          console.log("data", data);
+          this.showMessage(data.message);
+        },
+        reason => {
+          console.log("reason", reason);
+          this.showMessage(reason.message);
+        }
+      );
+    },
+    showMessage(popupMessage) {
+      console.log("popupMessage", popupMessage);
+      var myEvent = new CustomEvent("showMessagePopup", {
+        detail: {
+          popupMessage: popupMessage
+        }
+      });
+      WIN.dispatchEvent(myEvent);
+    },
+    validateForm() {
+      const login = DOC.querySelector(".login__input--login").value;
+      const password = DOC.querySelector(".login__input--password").value;
+      const isHuman = DOC.querySelector(".login__confirm-input--check-human")
+        .checked;
+      const humanConfirmed = DOC.querySelector(
+        ".login__confirm-input--humanConfirmed"
+      ).checked;
+
+      if (!login || !password) {
+        this.showMessage("Не верный логин или пароль");
+        return false;
+      }
+
+      if (!isHuman || !humanConfirmed) {
+        this.showMessage("Роботам тут не место");
+        return false;
+      }
+
+      return {
+        login,
+        password,
+        isHuman: isHuman,
+        confirmHuman: humanConfirmed
+      };
     }
   }
 };
@@ -29,16 +86,17 @@ var turner = new Vue({
   },
   mounted() {
     const DOC = document;
-    const body = DOC.getElementsByTagName("body")[0];
     const flipper = DOC.getElementById("welcome-turner");
-    body.classList.add("welcome--no-overflow");
+    BODY.classList.add("welcome--no-overflow");
 
-    body.addEventListener("click", e => {
+    BODY.addEventListener("click", e => {
       const authButton = DOC.getElementById("auth-button");
 
       if (
         !e.target.closest(".welcome-turner") &&
-        !e.target.closest("#auth-button")
+        !e.target.closest("#auth-button") &&
+        !e.target.closest(".message-popup") &&
+        !e.target.closest(".message-popup__button")
       ) {
         if (this.compToShow === "login") {
           // this.animationDirection = "flip-reverse";

@@ -16,12 +16,15 @@ html(lang="ru")
         
       )
 
+    
     include ./components/entry.pug
 
     .wrapper
       .maincontent
         block content
 
+    #message-container
+    
     script(src='bootloader.bundle.js')
     script(src='vendor.bundle.js')
     block scripts

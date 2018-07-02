@@ -5,3 +5,5 @@ import "./modules/parallax-scroll";
 import "./modules/btn";
 import "./modules/down-btn";
 import "./modules/up-btn";
+import "./modules/contact-me";
+import "./modules/message";

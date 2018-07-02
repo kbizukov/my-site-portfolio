@@ -66,18 +66,7 @@ block content
               .mentions__author #{mention[2]}
               cite.mentions__description &mdash; #{mention[3]}
 
-    form.contact-me
-      h2.block-subtitle.block-subtitle--contact.contact-me__title Связаться со мной
-      .contact-me__fields
-        input.contact-me__name.contact-me__field(type="text" placeholder="Ваше имя")
-        input.contact-me__email.contact-me__field(type="email" placeholder="Ваш email")
-        textarea.contact-me__message.contact-me__field(placeholder="Ваше сообщение")
-      nav.bottom-nav.bottom-nav--contact-me
-          ul.bottom-nav__list
-            li.bottom-nav__item.bottom-nav__item--send
-              a.bottom-nav__link Отправить
-            li.bottom-nav__item.bottom-nav__item--clear
-              a.bottom-nav__link.bottom-nav__link--clear Очистить
+    #contact-me-container
 
     #up-btn-container
       anchor-button(

@@ -23,6 +23,9 @@ html(lang="en")
         v-if="allowBigBG"
       )
 
+    include ./components/modules/message.pug
+    #message-container
+
     include ./common/auth_footer
 
     script(src="./bootloader.bundle.js")
