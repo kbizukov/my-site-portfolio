@@ -1,0 +1,86 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  background: rgba(34, 59, 101, 0.8);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  &__icon {
+    width: 78px;
+    height: 78px;
+    padding: 0 13px;
+    transform: rotate(-90deg);
+  }
+
+  &__percents {
+    color: #fff;
+    text-align: center;
+    font-size: 12.82px;
+    @include roboto-medium;
+    position: absolute;
+    left: 48%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 40px;
+    
+    @include from-tablets {
+      font-size: 13.96px;
+    }
+  }
+
+  &__circle {
+    stroke-dasharray: 157;
+    stroke-dashoffset: 157;
+    transition: stroke-dashoffset .5s;
+  }
+  
+  &__rotative {
+    transform-origin: 50% 48%;
+    transform: rotate(89deg);
+    animation: rotateCircle 3s cubic-bezier(0.88, 0, 0.24, 1) infinite;
+  }
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate(89deg);
+  }
+  to {
+    transform: rotate(809deg);
+  }
+}
+
+.preloader-enter-active, .preloader-leave-active {
+  transition: 1.5s;
+}
+
+.preloader-leave {
+  opacity: 1;
+}
+
+.preloader-leave-to {
+  opacity: 0;
+}
+
+.preloader-enter {
+  opacity: 0;
+}
+
+.preloader-enter-to {
+  opacity: 1;
+}

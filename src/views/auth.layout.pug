@@ -9,17 +9,19 @@ html(lang="en")
     title Portfolio | welcome page
     link(rel="stylesheet", href="main.min.css")
   body
-      
+
     block content
-    
-    #background-container
-    script(type="text/x-template")#background
-      .background
-        <template v-if="allowed">
-          .background__layer
-            +image("mountains-bg.png", "Горы", "background__img")
-          video(class="background__video" src="assets/images/night.mp4" autoplay muted loop)
-        </template>
+
+    include ./components/modules/preloader.pug
+    include ./components/modules/background.pug
+
+    #welcome-app
+      preloader(
+        
+      )
+      background(
+        v-if="allowBigBG"
+      )
 
     include ./common/auth_footer
 

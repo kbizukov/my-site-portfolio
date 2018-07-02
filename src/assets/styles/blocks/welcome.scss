@@ -64,6 +64,10 @@ body.welcome--no-overflow {
     .user__name {
       margin-top: 10px;
       margin-bottom: 0;
+
+      @include tablets {
+        margin-top: 11px;
+      }
     }
   }
 
@@ -86,7 +90,7 @@ body.welcome--no-overflow {
 
 
 .flip-enter-active, .flip-leave-active {
-  transition: 1s linear;
+  transition: .8s linear;
 }
 
 .flip-leave {
@@ -106,21 +110,21 @@ body.welcome--no-overflow {
 }
 
 // .flip-reverse-enter-active, .flip-reverse-leave-active {
-//   transition: 1s linear;
+//   transition: .8s linear;
 // }
 
 // .flip-reverse-leave {
-//   transform: rotateY(-360deg);
+//   transform: rotateY(0deg);
 // }
 
 // .flip-reverse-leave-to {
-//   transform: rotateY(-180deg);
+//   transform: rotateY(180deg);
 // }
 
 // .flip-reverse-enter {
-//   transform: rotateY(-180deg);
+//   transform: rotateY(180deg);
 // }
 
 // .flip-reverse-enter-to {
-//   transform: rotateY(-360deg);
+//   transform: rotateY(0deg);
 // }

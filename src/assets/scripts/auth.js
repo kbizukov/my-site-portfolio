@@ -1,2 +1,2 @@
-require("./welcome");
-require("./modules/background");
+import "./modules/welcome-app";
+import "./welcome";

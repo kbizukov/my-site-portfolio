@@ -1,3 +1,4 @@
+import "./modules/main-app";
 import "./modules/fullscreen-menu";
 import "./modules/slider";
 import "./modules/parallax-scroll";

@@ -1,3 +1,4 @@
+import "./modules/main-app";
 import "./modules/fullscreen-menu";
 import "./modules/parallax-scroll";
 import "./modules/btn";
