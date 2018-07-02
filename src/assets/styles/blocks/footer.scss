@@ -1,4 +1,6 @@
 .about__footer--over {
+  z-index: 20;
+  position: relative;
   margin-top: -19px;
 
   @include tablets {
@@ -10,6 +12,7 @@
 }
 
 .works__footer--over {
+  z-index: 20;
   margin-top: -347px;
 
   @include tablets {
@@ -62,7 +65,7 @@
       &--first {
         flex: 0 34.8%;
       }
-      
+
       &--second {
         flex: 0 38.9%;
       }
@@ -83,7 +86,8 @@
         min-height: 34px;
       }
 
-      &--second, &--third {
+      &--second,
+      &--third {
         padding: 0;
         width: 50%;
         flex: 1 auto;
@@ -120,7 +124,7 @@
         display: none;
       }
     }
-    
+
     @include tablets-max {
       margin-top: 0;
 
@@ -193,14 +197,14 @@
   }
 
   &__bottom {
-    background: rgba($blue, .85);
+    background: rgba($blue, 0.85);
     text-align: center;
     min-height: 38px;
     line-height: 24px;
 
     @include footer-laptops-max {
       min-height: 37px;
-      background: rgba(45, 71, 206, .85);
+      background: rgba(45, 71, 206, 0.85);
     }
 
     .footer__row {
@@ -210,22 +214,21 @@
       @include tablets-max {
         padding: 6px 0;
       }
-      
+
       @media screen and (min-width: $footer-laptops) and (max-width: $about-laptops-max) {
         padding: 5px 0;
       }
     }
-    
   }
 
   .footer-contacts {
     margin-top: -3px;
-    
+
     @include footer-laptops-max {
       margin-top: -4px;
       text-align: right;
     }
-    
+
     @include tablets-max {
       width: 100%;
       text-align: center;

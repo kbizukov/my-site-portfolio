@@ -1,18 +1,19 @@
-body, html {
+body,
+html {
   height: 100%;
 }
 
 body {
-  font-family: 'Roboto', Helvetica, sans-serif;
-  font-size: 14px;
+  font-family: "Roboto", Helvetica, sans-serif;
+  // font-size: 14px;
   line-height: 1.42;
   color: $text-color;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  @media screen and (min-width: $laptop-width) {
-    font-size: 16px;
-  }
+  // @media screen and (min-width: $laptop-width) {
+  //   font-size: 16px;
+  // }
 }
 
 .wrapper {
@@ -30,7 +31,9 @@ button {
   border: 0;
   cursor: pointer;
 
-  &:visited, &:focus, &:active {
+  &:visited,
+  &:focus,
+  &:active {
     outline: none;
   }
 }
@@ -45,7 +48,12 @@ ul {
   list-style: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: normal;
   margin: 0;
 }
