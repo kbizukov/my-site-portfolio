@@ -1,0 +1,33 @@
+script(type="text/x-template")#posts-container
+  section.blog#blog
+    aside.blog__nav
+      nav.nav.nav--blog
+        ul.nav__list
+          aside-item(
+            v-for="post in posts"
+            :key="post.created_at"
+            :post="post"
+          )
+
+    .blog__main
+      .blog__articles
+        blog-post(
+          v-for="post in posts"
+          :key="post.title"
+          :post="post"
+        )
+
+
+script(type="text/x-template")#aside-item
+  li.nav__item(:name="post.id")
+    a.nav__link(
+      :href="'#'+post.id") {{post.title}}
+
+script(type="text/x-template")#blog-post
+  article.article.blog__article(:id="post.id" :data-idtitle="post.id")
+    h2.article__header.block-subtitle.block-subtitle--article {{post.title}}
+    .article__date {{post.date}}
+    .article__text {{post.content}}
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero.

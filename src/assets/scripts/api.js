@@ -19,8 +19,14 @@ let realApi = {
       responseHandler
     );
   },
-  fetchWorks(userId) {
+  fetchWorks() {
     return axios.get("/works/8");
+  },
+  fetchPosts() {
+    return axios.get("/posts/8");
+  },
+  fetchSkills() {
+    return axios.get("/skills/8");
   }
 };
 

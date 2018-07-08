@@ -21,21 +21,44 @@
       margin-bottom: 18px;
     }
   }
-  
+
   &__text {
     line-height: 24px;
-    
+
     @include laptops {
       line-height: 26px;
       margin-left: 1px;
     }
-    
+
     p {
       margin-bottom: 9px;
 
       @include tablets-max {
         margin-bottom: 10px;
       }
+    }
+  }
+
+  &:not(:first-child) {
+    &:before {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 100%;
+      margin-bottom: 20px;
+
+      @include tablets {
+        height: 5px;
+        margin-bottom: 37px;
+      }
+
+      @include laptops {
+        height: 5px;
+        margin-bottom: 57px;
+      }
+
+      margin-right: 1px;
+      background: rgba(55, 62, 66, 0.07);
     }
   }
 }

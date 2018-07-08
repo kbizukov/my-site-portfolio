@@ -1,9 +1,9 @@
 import Vue from "vue";
+import Api from "../api";
 
 const skill = {
   props: {
-    skillName: String,
-    skillPercents: Number
+    skill: Object
   },
   template: "#skill",
   methods: {
@@ -12,8 +12,8 @@ const skill = {
       const dashOffset = parseInt(
         getComputedStyle(circle).getPropertyValue("stroke-dashoffset")
       );
-      const percents = (dashOffset / 100) * (100 - this.skillPercents);
-      const opacity = this.skillPercents / 100;
+      const percents = (dashOffset / 100) * (100 - this.skill.percents);
+      const opacity = this.skill.percents / 100;
 
       circle.style.strokeDashoffset = percents;
       circle.style.opacity = opacity;
@@ -35,27 +35,45 @@ const skill = {
   }
 };
 
-const skillsRow = {
-  template: "#skills-row",
+const skillsGroup = {
+  template: "#skills-group",
   components: {
     skill
   },
   props: {
-    skill: Object
+    skills: {
+      type: Array,
+      default: () => []
+    },
+    type: {
+      type: Object,
+      default: () => {}
+    }
   }
 };
 
 new Vue({
   el: "#skills-container",
   components: {
-    skillsRow
+    skillsGroup
   },
   data: {
-    skills: {}
+    skills: [],
+    types: [
+      { id: 0, name: "Frontend" },
+      { id: 1, name: "Backend" },
+      { id: 2, name: "Workflow" }
+    ]
   },
   created() {
-    const data = require("../../../data/skills.json");
-    this.skills = data;
+    this.getSkills();
+  },
+  methods: {
+    getSkills() {
+      Api.fetchSkills().then(response => {
+        this.skills = response.data;
+      });
+    }
   },
   template: "#skills-list"
 });

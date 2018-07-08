@@ -3,10 +3,12 @@ import "./modules/fullscreen-menu";
 import "./modules/parallax-scroll";
 import "./modules/btn";
 import "./modules/down-btn";
+import "./modules/posts";
 
-$(function() {
-  const WIN = window;
-  const DOC = document;
+const WIN = window;
+const $swipeMenu = $(".swipe-menu");
+
+const positionAsideNav = function() {
   const SCR = screen;
   const $articles = $(".blog__article"); // статьи справа
   const articles = $articles.toArray(); // []
@@ -17,9 +19,6 @@ $(function() {
   const $navItem = $(".nav__item");
   const $swipeNavLink = $(".swipe-nav__link");
   const wrapper = $(".wrapper")[0];
-  const $swipeTouch = $(".swipe-touch");
-  const $swipeMenu = $(".swipe-menu");
-  const $body = $("body");
 
   let activeArticleId = null;
 
@@ -109,10 +108,21 @@ $(function() {
       setArticlesWidth();
     });
   }
+};
 
+WIN.addEventListener("positionAsideNav", event => {
+  positionAsideNav();
+});
+
+$(function() {
   /** swipe menu **/
 
+  const $swipeTouch = $(".swipe-touch");
+  const $body = $("body");
+
+  console.log("$swipeMenu", $swipeMenu);
   $swipeMenu.on("click", e => {
+    console.log("swipeMenu click", e);
     let target = $(e.target);
     if (target.is(".swipe-nav__link")) {
       target.addClass("swipe-nav__link--active");
