@@ -18,6 +18,9 @@ const preloader = Vue.component("preloader", {
         // WIN.percents = 100;
         setTimeout(() => {
           this.loaded = true;
+          setTimeout(() => {
+            this.showWelcomeFlipper();
+          }, 600);
         }, 1000);
       } else if (this.percents === 0) {
         this.loaded = false;
@@ -95,6 +98,10 @@ const preloader = Vue.component("preloader", {
       const percents = (this.dashOffset / 100) * (100 - this.percents);
       // console.log("percents", percents);
       circle.style.strokeDashoffset = percents;
+    },
+    showWelcomeFlipper(data) {
+      var myEvent = new CustomEvent("showWelcomeFlipper");
+      WIN.dispatchEvent(myEvent);
     }
   },
   template: "#preloader"

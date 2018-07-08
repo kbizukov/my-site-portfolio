@@ -1,19 +1,44 @@
 import Vue from "vue";
 import Api from "./api";
+import axios from "axios";
 
 const WIN = window;
 const DOC = document;
 const BODY = DOC.getElementsByTagName("body")[0];
+let firstRender = true;
 
 const welcome = {
-  template: "#welcome"
+  template: "#welcome",
+  data() {
+    return {
+      firstRender: firstRender
+    };
+  },
+  mounted() {
+    console.log("mounted! firstRender", firstRender);
+    if (firstRender) {
+      WIN.addEventListener("showWelcomeFlipper", this.showWelcomeFlipper);
+    }
+  },
+  methods: {
+    showWelcomeFlipper(event) {
+      const welcomeFlipper = DOC.querySelector(".welcome");
+      this.firstRender = false;
+      firstRender = false;
+      WIN.removeEventListener("showWelcomeFlipper", this.showWelcomeFlipper);
+    }
+  }
 };
 
 const login = {
   template: "#login",
   data() {
     return {
-      confirmHuman: false
+      confirmHuman: false,
+      user: {
+        name: "admin-062018",
+        password: "admin-062018"
+      }
     };
   },
   methods: {
@@ -23,18 +48,26 @@ const login = {
     submitForm() {
       let validated = this.validateForm();
       if (!validated) return;
-
       console.log("validated", validated);
-      Api.login(validated).then(
-        data => {
-          console.log("data", data);
-          this.showMessage(data.message);
-        },
-        reason => {
-          console.log("reason", reason);
-          this.showMessage(reason.message);
-        }
-      );
+
+      Api.login(this.user)
+        .then(
+          response => {
+            if (response.status == 200) {
+              console.log("response", response);
+              this.showMessage("Вы успешно вошли");
+              const ttl = Math.floor(Date.now() / 1000 + response.data.ttl);
+              localStorage.setItem("token", response.data.token);
+              localStorage.setItem("ttl", ttl);
+              WIN.location.href = "/admin";
+            }
+          },
+          reason => {
+            console.log("reason.error", reason.error);
+            this.showMessage(reason.message);
+          }
+        )
+        .catch(e => console.error(e));
     },
     showMessage(popupMessage) {
       console.log("popupMessage", popupMessage);

@@ -20,7 +20,7 @@ block content
 
 
   script(type="text/x-template")#welcome
-    .welcome
+    .welcome.welcome-mount(:class="{'welcome-mount--first-load' : firstRender}")
       include ../common/user
 
       .welcome__socials
@@ -42,11 +42,19 @@ block content
         .login__input-container
           .login__icon-container
             +icon('login', 'login__icon login__icon--login')
-          input.login__input.login__input--login(type=text placeholder="Логин" required)
+          input.login__input.login__input--login(
+            v-model="user.name"
+            type="text" placeholder="Логин" required
+          )
         .login__input-container
           .login__icon-container
             +icon('password', 'login__icon')
-          input.login__input.login__input--password(type=text placeholder="Пароль" required)
+          input.login__input.login__input--password(
+            v-model="user.password"
+            type="password"
+            placeholder="Пароль"
+            required
+          )
       
       .login__confirm-not-robot
         .login__confirm-row

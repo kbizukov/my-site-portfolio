@@ -9,17 +9,17 @@ body.welcome--no-overflow {
   height: 100vh;
   z-index: 1;
 
-  background: url('./assets/images/welcome-bg-iphone.jpg') no-repeat;
+  background: url("./assets/images/welcome-bg-iphone.jpg") no-repeat;
   background-size: cover;
 
-  @media screen and (min-width: 425px){
-    background: url('./assets/images/welcome-bg-ipad.jpg') no-repeat;
+  @media screen and (min-width: 425px) {
+    background: url("./assets/images/welcome-bg-ipad.jpg") no-repeat;
     background-size: cover;
     background-position-y: center;
   }
 
-  @media screen and (min-width: 850px){
-    background: url('./assets/images/welcome-bg-1200.jpg') no-repeat;
+  @media screen and (min-width: 850px) {
+    background: url("./assets/images/welcome-bg-1200.jpg") no-repeat;
     background-size: cover;
     background-position: center;
   }
@@ -36,7 +36,6 @@ body.welcome--no-overflow {
     transition: transform 0.8s;
     perspective: 1000px;
 
-    
     @include laptops {
       width: 380px;
     }
@@ -54,6 +53,19 @@ body.welcome--no-overflow {
     }
   }
 
+  // .welcome-mount {
+  //   transform-origin: center;
+  //   opacity: 1;
+  //   transform: rotateX(0deg);
+  //   transition: all 1.8s;
+
+  //   &--first-load {
+  //     transform: rotateX(-45deg);
+  //     transform-origin: top;
+  //     opacity: 0;
+  //   }
+  // }
+
   .welcome {
     // transform: rotateY(0deg);
 
@@ -61,6 +73,11 @@ body.welcome--no-overflow {
     //   transform: rotateY(180deg);
     // }
 
+    @include laptops {
+      .user__avatar {
+        margin-bottom: 10px;
+      }
+    }
     .user__name {
       margin-top: 10px;
       margin-bottom: 0;
@@ -71,7 +88,8 @@ body.welcome--no-overflow {
     }
   }
 
-  .welcome, .login {
+  .welcome,
+  .login {
     position: absolute;
     backface-visibility: hidden;
     height: 395px;
@@ -88,9 +106,9 @@ body.welcome--no-overflow {
   }
 }
 
-
-.flip-enter-active, .flip-leave-active {
-  transition: .8s linear;
+.flip-enter-active,
+.flip-leave-active {
+  transition: 0.8s linear;
 }
 
 .flip-leave {

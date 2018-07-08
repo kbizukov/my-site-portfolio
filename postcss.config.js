@@ -10,7 +10,8 @@ module.exports = {
     }),
     require("postcss-pxtorem")({
       mediaQuery: false,
-      propList: ["font", "font-size", "line-height"]
+      propList: ["font", "font-size", "line-height"],
+      selectorBlackList: ["text-area"]
     }),
     require("postcss-advanced-variables")({
       variables: require("./src/assets/styles/variables")

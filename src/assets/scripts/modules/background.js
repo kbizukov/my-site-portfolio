@@ -62,9 +62,9 @@ const background = {
       return promise;
     },
     mountBackground() {
-      const background = DOC.querySelector(".background");
+      // const background = DOC.querySelector(".background");
       const backgroundLayer = DOC.querySelector(".background__layer");
-      const video = DOC.createElement("video");
+      // const video = DOC.createElement("video");
       const mountains = new Image();
 
       mountains.classList.add("background__img");
@@ -83,23 +83,35 @@ const background = {
         }
       );
 
-      video.classList.add("background__video");
-      video.src = "./assets/images/night.mp4";
-      video.setAttribute("autoplay", "");
-      video.setAttribute("muted", "");
-      video.setAttribute("loop", "");
-      background.appendChild(video);
-
-      video.onloadeddata = () => {
+      // video.classList.add("background__video");
+      // video.src = "./assets/images/night.mp4";
+      // video.setAttribute("autoplay", "");
+      // video.setAttribute("muted", "");
+      // video.setAttribute("loop", "");
+      // background.appendChild(video);
+      // console.log("video", video);
+      const vid = DOC.querySelector(".background__video");
+      // console.log("vid", vid);
+      // vid.onprogress = function(e) {
+      //   console.log("e", e);
+      //   console.log("Downloading video");
+      // };
+      if (vid) {
         WIN.percents += 50;
-        var myEvent = new CustomEvent("updatePercents", {
-          detail: {
-            percents: WIN.percents
-          }
-        });
-        WIN.dispatchEvent(myEvent);
-        console.log("видео загружено");
-      };
+      }
+
+      // vid.onloadeddata = () => {
+      //   console.log("onloadeddata");
+      //   // vid.play();
+      // WIN.percents += 50;
+      //   var myEvent = new CustomEvent("updatePercents", {
+      //     detail: {
+      //       percents: WIN.percents
+      //     }
+      //   });
+      //   WIN.dispatchEvent(myEvent);
+      //   console.log("видео загружено");
+      // };
 
       // this.downloadFile("./assets/images/night.mp4").then(
       //   function(response) {

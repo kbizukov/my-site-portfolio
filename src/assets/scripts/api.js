@@ -1,3 +1,5 @@
+import axios from "axios";
+
 function responseHandler(response) {
   if (response.status == 200) {
     return response.json();
@@ -7,10 +9,8 @@ function responseHandler(response) {
 }
 
 let realApi = {
-  login(data) {
-    return fetch("localhost/login", { method: "post", body: data }).then(
-      responseHandler
-    );
+  login(user) {
+    return axios.post("http://webdev-api.loftschool.com/login", user);
   },
   sendForm(data) {
     return fetch("localhost/sendForm", { method: "post", body: data }).then(
@@ -40,4 +40,4 @@ let mockApi = {
   }
 };
 
-export default mockApi;
+export default realApi;
