@@ -8,14 +8,19 @@ function responseHandler(response) {
   }
 }
 
+axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
+
 let realApi = {
   login(user) {
-    return axios.post("http://webdev-api.loftschool.com/login", user);
+    return axios.post("/login", user);
   },
   sendForm(data) {
     return fetch("localhost/sendForm", { method: "post", body: data }).then(
       responseHandler
     );
+  },
+  fetchWorks(userId) {
+    return axios.get("/works/8");
   }
 };
 

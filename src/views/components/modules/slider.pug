@@ -22,13 +22,13 @@ script(type="text/x-template")#slider-info
           tag="div"
           @enter="enterHandler"
         )
-          h2.block-subtitle.block-subtitle--works.subtitle(:key="work.title") {{work.title}}
+          h2.block-subtitle.block-subtitle--works.subtitle(:key="work.id") {{work.title}}
       transition-group(
         appear
         :css="false"
         @enter="enterHandler"
       )
-        .slider__info-skills(:key="work.skills") {{work.skills}}
+        .slider__info-skills(:key="work.title") {{work.techs}}
       .slider__info-button
         +icon('link', 'slider__info-icon')
         a(:href="work.link" target="_blank").slider__info-link Посмотреть сайт

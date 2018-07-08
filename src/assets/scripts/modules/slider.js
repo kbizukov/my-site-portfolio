@@ -1,9 +1,18 @@
 import Vue from "vue";
+import Api from "../api";
 
 const info = {
   template: "#slider-info",
   props: {
-    work: Object
+    work: {
+      type: Object,
+      default: {
+        id: 0,
+        title: "Проект",
+        photo: "",
+        link: ""
+      }
+    }
   },
   methods: {
     enterHandler(el, done) {
@@ -66,15 +75,34 @@ const info = {
 const display = {
   template: "#slider-display",
   props: {
-    work: Object
+    work: Object,
+    default: {
+      id: 0,
+      title: "Проект",
+      photo: "",
+      link: ""
+    }
   }
 };
 
 const buttons = {
   template: "#slider-buttons",
   props: {
-    works: Array,
-    currentIndex: Number
+    works: {
+      work: Array,
+      default: [
+        {
+          id: 0,
+          title: "Проект",
+          photo: "",
+          link: ""
+        }
+      ]
+    },
+    currentIndex: {
+      type: Number,
+      default: 0
+    }
   },
   methods: {
     slide(direction) {
@@ -109,7 +137,14 @@ new Vue({
     buttons
   },
   data: {
-    works: [],
+    works: [
+      {
+        id: 0,
+        title: "Проект",
+        photo: "",
+        link: ""
+      }
+    ],
     currentWork: {},
     currentIndex: 0
   },
@@ -123,8 +158,8 @@ new Vue({
     }
   },
   created() {
-    this.works = require("../../../data/works.json");
-    this.currentWork = this.works[0];
+    // this.works = require("../../../data/works.json");
+    this.getWorks();
   },
   methods: {
     handleSlide(direction) {
@@ -137,6 +172,16 @@ new Vue({
           this.currentIndex--;
           break;
       }
+    },
+    getWorks() {
+      Api.fetchWorks().then(response => {
+        console.log("response", response);
+        const baseURL = "http://webdev-api.loftschool.com/";
+        let raw = response.data;
+        raw.forEach(work => (work.photo = baseURL + work.photo));
+        this.works = raw;
+        this.currentWork = this.works[0];
+      });
     }
   },
   template: "#slider"
