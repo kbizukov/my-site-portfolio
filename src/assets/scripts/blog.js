@@ -4,6 +4,7 @@ import "./modules/parallax-scroll";
 import "./modules/btn";
 import "./modules/down-btn";
 import "./modules/posts";
+import "./modules/swipe-menu";
 
 const WIN = window;
 const $swipeMenu = $(".swipe-menu");
@@ -17,6 +18,7 @@ const positionAsideNav = function() {
   const $articlesList = $(".nav__list"); // ul со списком статей слева
   const $articleTitles = $(".blog__nav"); // aside
   const $navItem = $(".nav__item");
+  const $swipeNavItem = $(".swipe-nav__item");
   const $swipeNavLink = $(".swipe-nav__link");
   const wrapper = $(".wrapper")[0];
 
@@ -37,6 +39,7 @@ const positionAsideNav = function() {
         activeArticleId = artcl.dataset.idtitle;
 
         $navItem.removeClass("nav__item--active");
+        $swipeNavItem.removeClass("swipe-nav__link--active");
         $swipeNavLink.removeClass("swipe-nav__link--active");
         $(`[name=${activeArticleId}]`).addClass("nav__item--active");
 
@@ -120,9 +123,7 @@ $(function() {
   const $swipeTouch = $(".swipe-touch");
   const $body = $("body");
 
-  console.log("$swipeMenu", $swipeMenu);
   $swipeMenu.on("click", e => {
-    console.log("swipeMenu click", e);
     let target = $(e.target);
     if (target.is(".swipe-nav__link")) {
       target.addClass("swipe-nav__link--active");

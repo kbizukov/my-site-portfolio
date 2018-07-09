@@ -1,0 +1,17 @@
+script(type="text/x-template")#swipe-menu
+  .swipe-menu.swipe-menu--closed
+    nav.swipe-nav
+      ul.swipe-nav__list
+
+        swipe-item(
+          v-for="post in posts"
+          :key="post.created_at"
+          :post="post"
+        )
+        
+    .swipe-touch
+
+
+script(type="text/x-template")#swipe-item
+  li.swipe-nav__item(:name="post.id")
+    a.swipe-nav__link(:href="'#'+post.id") {{post.title}}
