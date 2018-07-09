@@ -15,7 +15,7 @@
           router-link.tabs__item(
             v-for="tab, index in tabs"
             :key="index"
-            :to="`/admin/${tab.route}`"
+            :to="`/my-site-portfolio/dist/admin/${tab.route}`"
             tag="li"
           )
             a.tabs__link(
@@ -69,7 +69,7 @@ export default {
   created() {
     this.getUserInfo().then(r => {
       if (this.activeTab === "Обо мне") {
-        this.$router.push("/admin/about");
+        this.$router.push("/my-site-portfolio/dist/admin/about");
       }
     });
   },
