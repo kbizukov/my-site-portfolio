@@ -10,24 +10,24 @@ import blog from "./components/blog.vue";
 import axios from "axios";
 
 const routes = [
+  // {
+  //   path: "/admin",
+  //   redirect: "/my-site-portfolio/dist/admin"
+  // },
   {
-    path: "/",
-    redirect: "/admin"
-  },
-  {
-    path: "/admin",
+    path: "/my-site-portfolio/dist/admin",
     component: admin,
     children: [
       {
-        path: "/admin/about",
+        path: "/my-site-portfolio/dist/admin/about",
         component: about
       },
       {
-        path: "/admin/works",
+        path: "/my-site-portfolio/dist/admin/works",
         component: works
       },
       {
-        path: "/admin/blog",
+        path: "/my-site-portfolio/dist/admin/blog",
         component: blog
       }
     ]
