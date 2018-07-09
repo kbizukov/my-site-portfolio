@@ -53,7 +53,7 @@ router.beforeEach((to, from, next) => {
     .catch(error => {
       console.log("error in router");
       localStorage.removeItem("token");
-      window.location.href = "/";
+      window.location.href = "/my-site-portfolio/dist/";
     });
 });
 
