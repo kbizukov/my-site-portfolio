@@ -59,7 +59,11 @@ block content
       .login__confirm-not-robot
         .login__confirm-row
           label.login__confirm-label
-            input.login__confirm-input.login__confirm-input--check-human(type="checkbox" required)
+            input.login__confirm-input.login__confirm-input--check-human(
+              v-model="isHumanConfirmed.checkHuman"
+              type="checkbox"
+              required
+              )
             .login__confirm-icon-container
               +icon('check', 'login__icon login__icon--checkbox')
             span.login__label-text Я человек
@@ -69,7 +73,11 @@ block content
         .login__confirm-row
           .login__confirm-radios
             label.login__confirm-label.login__confirm-label--first
-              input.login__confirm-input.login__confirm-input--humanConfirmed(type="radio" name="confirm-not-robot")
+              input.login__confirm-input.login__confirm-input--humanConfirmed(
+                v-model="isHumanConfirmed.humanConfirmed"
+                type="radio"
+                name="confirm-not-robot"
+                )
               .login__confirm-icon-container.login__confirm-icon-container--circle.login__confirm-icon-container--yes
               span.login__label-text Да
 

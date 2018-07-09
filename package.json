@@ -7,7 +7,8 @@
     "dev:mpa": "cross-env NODE_ENV=development gulp",
     "dev:spa": "cross-env NODE_ENV=development webpack-dev-server --config webpack.spa.config.js --open --hot",
     "build": " cross-env NODE_ENV=production gulp build && cross-env NODE_ENV=production webpack --config webpack.spa.config.js --progress --hide-modules",
-    "reg": "node reg-util.js"
+    "reg": "node reg-util.js",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -60,6 +61,7 @@
     "uglifyjs-webpack-plugin": "^1.2.5",
     "vue-loader": "^14.2.2",
     "vue-template-compiler": "2.5.13",
+    "webdriverio": "^4.13.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1",
     "webpack-stream": "^4.0.3"

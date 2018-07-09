@@ -38,8 +38,17 @@ const login = {
       user: {
         name: "admin-062018",
         password: "admin-062018"
+      },
+      isHumanConfirmed: {
+        checkHuman: false,
+        humanConfirmed: false
       }
     };
+  },
+  watch: {
+    isHumanConfirmed() {
+      console.log("this.isHumanConfirmed", this.isHumanConfirmed);
+    }
   },
   methods: {
     toMainHandler() {
