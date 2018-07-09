@@ -79,7 +79,7 @@ export default {
       console.log("returnToSite");
       this.logout();
       setTimeout(() => {
-        window.location.href = "/";
+        window.location.href = "/my-site-portfolio/dist/";
       }, 1000);
     }
   }
