@@ -1,0 +1,30 @@
+[
+  {
+    "id": "0",
+    "title": "Самое важное в SASS",
+    "date": "22 июня 2018",
+    "content":
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero."
+  },
+  {
+    "id": "1",
+    "title": "Приёмы в вёрстке, без которых не обходится ни один сайт",
+    "date": "13 июня 2018",
+    "content":
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero."
+  },
+  {
+    "id": "2",
+    "title": "Самый необходимый набор Gulp плагинов",
+    "date": "8 июня 2018",
+    "content":
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero."
+  },
+  {
+    "id": "3",
+    "title": "Почему я выбрал Pug",
+    "date": "14 мая 2018",
+    "content":
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quaerat quisquam, nemo ipsa sequi modi distinctio ipsam exercitationem officia earum fugit doloremque eos labore ipsum libero voluptatibus. Molestias, placeat vero."
+  }
+]

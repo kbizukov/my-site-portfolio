@@ -1,6 +1,9 @@
 import Vue from "vue";
 import Api from "../api";
 
+const DOC = document;
+const WIN = window;
+
 const asideItem = {
   props: {
     post: {
@@ -13,6 +16,57 @@ const asideItem = {
       detail: {}
     });
     window.dispatchEvent(myEvent);
+  },
+  methods: {
+    scrollToPost(e) {
+      const toElemName = e.target.attributes.postId.value;
+
+      const scrollToElem = DOC.getElementById(toElemName);
+      const articleYOffset = DOC.documentElement.scrollTop;
+      const elemToOffsetTop = scrollToElem.offsetTop;
+
+      console.log("articleYOffset", articleYOffset);
+      console.log("elemToOffsetTop", elemToOffsetTop);
+      let vScrollTo = elemToOffsetTop;
+      if (elemToOffsetTop < articleYOffset) {
+        vScrollTo = articleYOffset;
+      }
+
+      this.scrollTo(
+        elemToOffsetTop,
+        toElemName,
+        articleYOffset,
+        vScrollTo,
+        100
+      );
+    },
+    scrollTo(elemToOffsetTop, toElemName, totalScroll, to, duration) {
+      console.log("to", to);
+      var perTick = (to / duration) * 10;
+
+      setTimeout(() => {
+        if (elemToOffsetTop < totalScroll) {
+          totalScroll -= perTick;
+        } else {
+          totalScroll += perTick;
+        }
+        console.log("totalScroll", totalScroll);
+        WIN.scrollTo(0, totalScroll);
+
+        if (toElemName === "top") {
+          if (WIN.pageYOffset <= elemToOffsetTop) return;
+        } else {
+          if (WIN.pageYOffset >= to) return;
+        }
+        this.scrollTo(
+          elemToOffsetTop,
+          toElemName,
+          totalScroll,
+          to,
+          duration - 10
+        );
+      }, 10);
+    }
   },
   template: "#aside-item"
 };
@@ -34,13 +88,7 @@ const posts = new Vue({
     blogPost
   },
   data: {
-    posts: [] /* ,
-    articles: [
-      ["Самое важное в SASS"],
-      ["Приёмы в вёрстке, без которых не обходится ни один сайт"],
-      ["Самый необходимый набор Gulp плагинов"],
-      ["Почему я выбрал Pug"]
-    ] */
+    posts: []
   },
   created() {
     this.getPosts();
@@ -49,7 +97,7 @@ const posts = new Vue({
     getPosts() {
       Api.fetchPosts().then(response => {
         let raw = response.data;
-        raw.forEach(post => (post.date = this.formatDate(+post.date)));
+        // raw.forEach(post => (post.date = this.formatDate(+post.date)));
         this.posts = raw;
       });
     },

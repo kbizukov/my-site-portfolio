@@ -7,8 +7,9 @@ const info = {
     work: {
       type: Object,
       default: {
-        id: 0,
-        title: "Проект",
+        id: 2,
+        title: "Проект 2",
+        techs: "",
         photo: "",
         link: ""
       }
@@ -77,8 +78,9 @@ const display = {
   props: {
     work: Object,
     default: {
-      id: 0,
+      id: 1,
       title: "Проект",
+      techs: "",
       photo: "",
       link: ""
     }
@@ -94,6 +96,7 @@ const buttons = {
         {
           id: 0,
           title: "Проект",
+          techs: "",
           photo: "",
           link: ""
         }
@@ -141,6 +144,7 @@ new Vue({
       {
         id: 0,
         title: "Проект",
+        techs: "",
         photo: "",
         link: ""
       }
@@ -175,10 +179,9 @@ new Vue({
     },
     getWorks() {
       Api.fetchWorks().then(response => {
-        console.log("response", response);
-        const baseURL = "http://webdev-api.loftschool.com/";
+        // const baseURL = "http://webdev-api.loftschool.com/";
         let raw = response.data;
-        raw.forEach(work => (work.photo = baseURL + work.photo));
+        // raw.forEach(work => (work.photo = baseURL + work.photo));
         this.works = raw;
         this.currentWork = this.works[0];
       });

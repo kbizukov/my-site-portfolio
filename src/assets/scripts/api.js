@@ -8,7 +8,7 @@ function responseHandler(response) {
   }
 }
 
-axios.defaults.baseURL = "http://webdev-api.loftschool.com/";
+// axios.defaults.baseURL = "/";
 
 let realApi = {
   login(user) {
@@ -20,13 +20,40 @@ let realApi = {
     );
   },
   fetchWorks() {
-    return axios.get("/works/8");
+    // return axios.get("/works/8");
+    const worksData = require("../../data/works.json");
+
+    return new Promise((resolve, reject) => {
+      if (worksData) {
+        resolve({ data: worksData });
+      } else {
+        reject({ status: "Error", message: "Нет работ" });
+      }
+    });
   },
   fetchPosts() {
-    return axios.get("/posts/8");
+    // return axios.get("/posts/8");
+    const postsData = require("../../data/posts.json");
+
+    return new Promise((resolve, reject) => {
+      if (postsData) {
+        resolve({ data: postsData });
+      } else {
+        reject({ status: "Error", message: "Нет постов" });
+      }
+    });
   },
   fetchSkills() {
-    return axios.get("/skills/8");
+    // return axios.get("/skills/8");
+    const skillsData = require("../../data/skills.json");
+
+    return new Promise((resolve, reject) => {
+      if (skillsData) {
+        resolve({ data: skillsData });
+      } else {
+        reject({ status: "Error", message: "Нет скилов" });
+      }
+    });
   }
 };
 

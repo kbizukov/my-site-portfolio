@@ -32,7 +32,7 @@ const swipeMenu = new Vue({
     getPosts() {
       Api.fetchPosts().then(response => {
         let raw = response.data;
-        raw.forEach(post => (post.date = this.formatDate(+post.date)));
+        // raw.forEach(post => (post.date = this.formatDate(+post.date)));
         this.posts = raw;
       });
     },

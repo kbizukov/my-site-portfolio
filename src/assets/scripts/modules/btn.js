@@ -26,7 +26,6 @@ Vue.component("anchorButton", {
 
       function scrollTo(totalScroll, to, duration) {
         var perTick = (to / duration) * 10;
-        // console.log("perTick", perTick);
 
         setTimeout(function() {
           if (toElemName === "top") {
@@ -34,7 +33,7 @@ Vue.component("anchorButton", {
           } else {
             totalScroll += perTick;
           }
-          // console.log("totalScroll", totalScroll);
+
           WIN.scrollTo(0, totalScroll);
 
           if (toElemName === "top") {

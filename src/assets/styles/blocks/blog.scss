@@ -110,9 +110,9 @@
       }
       margin-bottom: 19px;
 
-      &:last-child {
-        margin-bottom: 22px;
-      }
+      // &:last-child {
+      //   margin-bottom: 22px;
+      // }
 
       @include tablets {
         &:not(:first-child) {

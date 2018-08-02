@@ -36,8 +36,8 @@ const login = {
     return {
       confirmHuman: false,
       user: {
-        name: "admin-062018",
-        password: "admin-062018"
+        name: "",
+        password: ""
       },
       isHumanConfirmed: {
         checkHuman: false,
